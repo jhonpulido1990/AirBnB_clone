@@ -1,3 +1,1 @@
-## _AirBnB clone - The console
-
-<<interesty>>
+# AirBnB_clone

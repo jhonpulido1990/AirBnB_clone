@@ -5,12 +5,9 @@ import uuid
 
 class BaseModel:
     def __init__(self, created_at = datetime.now()):
-        self.id = str(uuid.uuid4())
+        self.id = (uuid.uuid4()).hex
         self.created_at = created_at
-        self.updated_at = datetime
-        print('Instance created at', self.created_at)
-        print('Instance update at', self.updated_at)
-        print('Instance id', self.id)
+        self.updated_at = created_at
 
     def __str__(self):
         '''
@@ -19,4 +16,10 @@ class BaseModel:
         return "[Basemodel] ({}) {}".format(
             self.id, self.__dict__)
 
-    
+    def save(self):
+        self.updated_at = datetime.now()
+
+    def to_dict(self):
+        self.created_at = self.created_at.isoformat()
+        self.updated_at = datetime.isoformat(datetime.now())
+        return dict((key, getattr(self, key)) for key in dir(self) if key not in dir(self.__class__))

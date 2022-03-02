@@ -2,8 +2,13 @@
 
 import cmd
 
+
 class HBNBCommand(cmd.Cmd):
-    pass
+    #prompt = '(hbnb)'
+
+    def to_quit(self, line):
+        return True
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()

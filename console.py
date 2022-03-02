@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 
 import cmd
+import json
 from models.base_model import BaseModel
+from models.engine.file_storage import FileStorage
 
 class HBNBCommand(cmd.Cmd):
     prompt = '(hbnb) '
@@ -18,11 +20,10 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
 
     def do_create(self, line):
-        if line == self.__class__.__name__:
-            NewModel = BaseModel.id
-            NewModel.save()
-            print(self.to_dict())
-
+        if line == "BaseModel":
+            Nline = BaseModel()
+            print(Nline.id)
+            Nline.save()
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()

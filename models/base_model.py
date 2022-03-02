@@ -1,12 +1,11 @@
 #!/usr/bin/python3
 from datetime import datetime
-from time import strftime
 import uuid
-
+import models
 
 class BaseModel:
     def __init__(self, *args, **kwargs):
-        if kwargs and len(kwargs) is not 0:
+        if kwargs and len(kwargs) != 0:
             del kwargs['__class__']
             for key, value in kwargs.items():
                 setattr(self, key, value)
@@ -16,6 +15,8 @@ class BaseModel:
             self.id = str(uuid.uuid4())
             self.updated_at = datetime.now()
             self.created_at = datetime.now()
+            models.storage.new(self)
+            models.storage.save()
         if args is not None:
             pass
 
@@ -23,11 +24,12 @@ class BaseModel:
         '''
         print date
         '''
-        return "[Basemodel] ({}) {}".format(
+        return "[{:s}] ({}) {}".format(self.__class__.__name__,
             self.id, self.__dict__)
 
     def save(self):
         self.updated_at = datetime.now()
+        models.storage.save()
 
     def to_dict(self):
         dic = self.__dict__.copy()

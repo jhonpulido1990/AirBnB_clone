@@ -17,5 +17,12 @@ class HBNBCommand(cmd.Cmd):
         if self.__class__.__name__:
             print("** class doesn't exist **")
 
+    def do_create(self, line):
+        if line == self.__class__.__name__:
+            NewModel = BaseModel.id
+            NewModel.save()
+            print(self.to_dict())
+
+
 if __name__ == '__main__':
     HBNBCommand().cmdloop()

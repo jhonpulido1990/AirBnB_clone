@@ -6,6 +6,7 @@ import shlex
 from models.base_model import BaseModel
 from models import storage
 
+
 class HBNBCommand(cmd.Cmd):
     prompt = '(hbnb) '
 
@@ -48,7 +49,7 @@ class HBNBCommand(cmd.Cmd):
             Nline.save()
 
         elif len(line) == 0:
-            print ("** class name missing **")
+            print("** class name missing **")
 
         else:
             print("** class doesn't exist **")

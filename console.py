@@ -92,13 +92,8 @@ class HBNBCommand(cmd.Cmd):
         if basem in storage.all().keys():
             ln2 = storage.all()[basem]
             ln2.to_dict()
-            ln2[ln[2]] = ln[3]
-         #   cp = ln2.to_dict().copy()
-         #   cp[ln[2]] = ln[3]
-         #   cp.__str__()
-         #   ln2 = BaseModel(**cp)
-            #print(ln2)
-         #   ln2.save()
+            setattr(ln2, ln[2], ln[3])
+            ln2.save()
             print(ln2)
 
 if __name__ == '__main__':

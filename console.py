@@ -7,17 +7,38 @@ from models import storage
 
 class HBNBCommand(cmd.Cmd):
     prompt = '(hbnb) '
+
+    def emptyline(self):
+        pass
+
     def do_quit(self, line):
-        'Programme output function'
-        return exit(1)
+        'Quit command to exit the program\n'
+        return True
 
     def do_EOF(self, line):
-        'Programme output function'
-        return exit(1)
+        'Quit command to exit the program\n'
+        return True
 
     def do_all(self, line):
-        if self.__class__.__name__:
+        dictt = {'BaseModel': BaseModel()}
+        if len(line) == 0:
+            lista = []
+            for key, value in storage.all().items():
+                lista.append(value.__str__())
+            print(lista)
+            return
+
+        ln = line.split()
+        if ln[0] in dictt:
+            lista2 = []
+            for key, value in storage.all().items():
+                if ln[0] == value.to_dict()["__class__"]:
+                    lista2.append(value.__str__())
+            print(lista2)
+            return
+        else:
             print("** class doesn't exist **")
+            return
 
     def do_create(self, line):
         if line == "BaseModel":
@@ -63,5 +84,22 @@ class HBNBCommand(cmd.Cmd):
                     storage.save()
                 else:
                     print("** no instance found **")
+
+    def do_update(self, line):
+        dictt = {'BaseModel': BaseModel()}
+        ln = line.split()
+        basem = "{}.{}".format(ln[0], ln[1])
+        if basem in storage.all().keys():
+            ln2 = storage.all()[basem]
+            ln2.to_dict()
+            ln2[ln[2]] = ln[3]
+         #   cp = ln2.to_dict().copy()
+         #   cp[ln[2]] = ln[3]
+         #   cp.__str__()
+         #   ln2 = BaseModel(**cp)
+            #print(ln2)
+         #   ln2.save()
+            print(ln2)
+
 if __name__ == '__main__':
     HBNBCommand().cmdloop()

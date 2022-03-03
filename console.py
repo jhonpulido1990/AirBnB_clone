@@ -2,6 +2,7 @@
 
 import cmd
 import json
+import shlex
 from models.base_model import BaseModel
 from models import storage
 
@@ -86,15 +87,33 @@ class HBNBCommand(cmd.Cmd):
                     print("** no instance found **")
 
     def do_update(self, line):
-        dictt = {'BaseModel': BaseModel()}
-        ln = line.split()
-        basem = "{}.{}".format(ln[0], ln[1])
-        if basem in storage.all().keys():
-            ln2 = storage.all()[basem]
-            ln2.to_dict()
-            setattr(ln2, ln[2], ln[3])
-            ln2.save()
-            print(ln2)
+        if len(line) == 0:
+            print("** class name missing **")
+        else:
+            dictt = {'BaseModel': BaseModel()}
+            ln = shlex.split(line)
+            if ln[0] != "BaseModel":
+                print("** class doesn't exist **")
+            elif ln[0] == "BaseModel" and len(ln) == 1:
+                print("** instance id missing **")
+            elif ln[0] == "BaseModel" and len(ln) == 2:
+                basem = "{}.{}".format(ln[0], ln[1])
+                if basem in storage.all().keys():
+                    print("** attribute name missing **")
+                else:
+                    print("** no instance found **")
+            elif ln[0] == "BaseModel" and len(ln) == 3:
+                    print("** value missing **")
+            elif ln[0] == "BaseModel" and len(ln) == 4:
+                basem = "{}.{}".format(ln[0], ln[1])
+                if basem in storage.all().keys():
+                    ln2 = storage.all()[basem]
+                    ln2.to_dict()
+                    setattr(ln2, ln[2], ln[3])
+                    ln2.save()
+                else:
+                    print("** no instance found **")
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()

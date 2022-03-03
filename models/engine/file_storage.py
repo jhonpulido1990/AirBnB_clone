@@ -13,7 +13,7 @@ class FileStorage:
 
     def new(self, obj):
         if obj is not None:
-            keysi = obj.__class__.__name__ + '.' +obj.id
+            keysi = obj.__class__.__name__ + '.' + obj.id
             self.__objects[keysi] = obj
 
     def save(self):
@@ -21,7 +21,7 @@ class FileStorage:
         for keysi in self.__objects:
             dictiona[keysi] = self.__objects[keysi].to_dict()
         with open(self.__file_path, 'w') as f:
-            json.dump(dictiona,f)
+            json.dump(dictiona, f)
 
     def reload(self):
         try:

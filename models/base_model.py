@@ -1,11 +1,23 @@
 #!/usr/bin/python3
+'''put in place a parent class
+(called BaseModel) to take care
+of the initialization, serialization
+and deserialization of
+your future instances'''
+
 from datetime import datetime
 import uuid
 import models
 
 
 class BaseModel:
+    '''
+    Create a file named models/base_model.py
+    '''
     def __init__(self, *args, **kwargs):
+        '''
+        define of constructor
+        '''
         if kwargs and len(kwargs) != 0:
             del kwargs['__class__']
             for key, value in kwargs.items():
@@ -31,12 +43,18 @@ class BaseModel:
                                        self.id, self.__dict__)
 
     def save(self):
+        '''
+        method that save in storage
+        '''
         self.updated_at = datetime.now()
         models.storage.save()
 
     def to_dict(self):
+        '''
+        method that create dictionary
+        '''
         dic = self.__dict__.copy()
         dic["__class__"] = self.__class__.__name__
         dic.update({'created_at': self.created_at.isoformat(),
                     'updated_at': self.updated_at.isoformat()})
-        return(dic)
+        return dic

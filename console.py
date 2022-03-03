@@ -56,19 +56,19 @@ class HBNBCommand(cmd.Cmd):
 
     def do_show(self, line):
         if len(line) == 0:
-           print("** class name missing **")
+            print("** class name missing **")
         else:
-           line2 = line.split()
-           if line2[0] == "BaseModel" and len(line2) == 1:
-               print("** instance id missing **")
-           elif line2[0] != "BaseModel":
-               print("** class doesn't exist **")
-           else:
-               basem = "{}.{}".format(line2[0], line2[1])
-               if basem in storage.all().keys():
-                   print(storage.all()[basem])
-               else:
-                   print("** no instance found **")
+            line2 = line.split()
+            if line2[0] == "BaseModel" and len(line2) == 1:
+                print("** instance id missing **")
+            elif line2[0] != "BaseModel":
+                print("** class doesn't exist **")
+            else:
+                basem = "{}.{}".format(line2[0], line2[1])
+                if basem in storage.all().keys():
+                    print(storage.all()[basem])
+                else:
+                    print("** no instance found **")
 
     def do_destroy(self, line):
         if len(line) == 0:
@@ -104,7 +104,7 @@ class HBNBCommand(cmd.Cmd):
                 else:
                     print("** no instance found **")
             elif ln[0] == "BaseModel" and len(ln) == 3:
-                    print("** value missing **")
+                print("** value missing **")
             elif ln[0] == "BaseModel" and len(ln) == 4:
                 basem = "{}.{}".format(ln[0], ln[1])
                 if basem in storage.all().keys():

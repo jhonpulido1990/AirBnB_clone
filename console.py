@@ -1,14 +1,21 @@
 #!/usr/bin/python3
-
 import cmd
 import json
 import shlex
 import models
 from models.base_model import BaseModel
 from models.user import User
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
 from models import storage
 
-dictt = {'BaseModel': BaseModel(), 'User': User()}
+dictt = {'BaseModel': BaseModel(), 'User': User(), 'State': State(),
+         'City': City(), 'Amenity': Amenity(), 'Place': Place(),
+         'Review': Review()}
+
 
 class HBNBCommand(cmd.Cmd):
     prompt = '(hbnb) '
@@ -47,7 +54,6 @@ class HBNBCommand(cmd.Cmd):
     def do_create(self, line):
         if line in dictt:
             Nline = dictt[line]
-            #print(type(Nline))
             print(Nline.id)
             Nline.save()
 

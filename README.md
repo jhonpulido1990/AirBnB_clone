@@ -1,39 +1,65 @@
-# 0x07. Python - Test-driven development
+# 0x00. AirBnB clone - The console
 ## Details
-      By Guillaume          Weight: 1              Project over - took place from 01-21-2022 to 01-26-2022          - you're done with 67% of tasks.              An auto review will be launched at the deadline      #### In a nutshell…
-* Auto QA review:          135.75/167 mandatory            &            0.0/104 optional      
-* Altogether:         81.29%* Mandatory: 81.29%
-* Optional: 0.0%
-*               Calculation:                   81.29%                    + (81.29% * 0.0%)               == 81.29%
+      By Guillaume          Weight: 5          Project to be done in teams of 2 people        (your team: William Cardozo, Jhon Jairo Pulido Lasso                Ongoing project - started 02-28-2022, must end by 03-07-2022 (in 3 days)          - you're done with 0% of tasks.              Checker will be released at 03-05-2022 06:00 AM      Manual QA review must be done          (request it when you are done with the project)              An auto review will be launched at the deadline      ## Concepts
+For this project, students are expected to look at these concepts:
+* [Python packages](https://intranet.hbtn.io/concepts/66) 
 
- ![](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/246/giphy-4.gif) 
+* [AirBnB clone](https://intranet.hbtn.io/concepts/74) 
+
+ ![](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2018/6/65f4a1dd9c51265f49d0.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOU5BHMTQX4%2F20220304%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220304T155845Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=fe0339c69d02ebbf4dac31aa9fd0ae66b14b77cd118431130b6bca72111dc0a5) 
 
 ## Background Context
-### Important notice on intranet checks for Python projects
-Starting from today:
-* Based on the requirements of each task, you should always write the documentation (module(s) + function(s)) and tests first, before you actually code anything
-* The intranet checks for Python projects won’t be released before their first deadline, in order for you to focus more on TDD and think about all possible cases
-* We strongly encourage you to work together on test cases, so that you don’t miss any edge case. But not in the implementation of them!
-* Don’t trust the user, always think about all possible edge cases
+### Welcome to the AirBnB clone project!
+Before starting, please read the  [AirBnB](https://intranet.hbtn.io/rltoken/bw70gxOl1RHBKFAWAR2Y3w) 
+  concept page.
+
+
+#### First step: Write a command interpreter to manage your AirBnB objects.
+This is the first step towards building your first full web application: the  AirBnB clone .This first step is very important because you will use what you build during this project with all other following projects: HTML/CSS templating, database storage, API, front-end integration… 
+Each task is linked and will help you to:
+* put in place a parent class (called  ` BaseModel ` ) to take care of the initialization, serialization and deserialization of your future instances
+* create a simple flow of serialization/deserialization: Instance <-> Dictionary <-> JSON string <-> file
+* create all classes used for AirBnB ( ` User ` ,  ` State ` ,  ` City ` ,  ` Place ` …) that inherit from  ` BaseModel ` 
+* create the first abstracted storage engine of the project: File storage. 
+* create all unittests to validate all our classes and storage engine
+### What’s a command interpreter?
+Do you remember the Shell? It’s exactly the same but limited to a specific use-case. In our case, we want to be able to manage the objects of our project:
+* Create a new object (ex: a new User or a new Place)
+* Retrieve an object from a file, a database etc…
+* Do operations on objects (count, compute stats, etc…)
+* Update attributes of an object
+* Destroy an object
 ## Resources
 Read or watch :
-* [doctest — Test interactive Python examples](https://intranet.hbtn.io/rltoken/alaT1C9CeCbkRKh-yjMRww) 
- (until “26.2.3.7. Warnings” included)
-* [doctest – Testing through documentation](https://intranet.hbtn.io/rltoken/cpEYbv_Z55QrSVRiuG5tUw) 
+* [Python abstract classes](https://intranet.hbtn.io/rltoken/5Dv7z90qa94hYqtPRCe_wA) 
 
-* [Unit Tests in Python](https://intranet.hbtn.io/rltoken/CELicn3K8hODQsWZak_h0g) 
+* [cmd module](https://intranet.hbtn.io/rltoken/7dj8WbEE01SwPY2Qxy_Ixg) 
+
+* Packages concept page
+* [uuid module](https://intranet.hbtn.io/rltoken/xJhjt-mMAchNu5WOb2X6DQ) 
+
+* [datetime](https://intranet.hbtn.io/rltoken/aEuCrtCn7p5xaYbNRM8ccQ) 
+
+* [unittest module](https://intranet.hbtn.io/rltoken/XfOae8zIhTiKYFMTF98qLg) 
+
+* [args/kwargs](https://intranet.hbtn.io/rltoken/jQd3P_uSO0FeU6jlN-z5mg) 
+
+* [Python test cheatsheet](https://intranet.hbtn.io/rltoken/WPlydsqB0PG0uVcixemv9A) 
 
 ## Learning Objectives
-At the end of this project, you are expected to be able to  [explain to anyone](https://intranet.hbtn.io/rltoken/oMvc8XjCV3WQo0fPN2hJXw) 
+At the end of this project, you are expected to be able to  [explain to anyone](https://intranet.hbtn.io/rltoken/YeIzIx-J9Sd9WgiVerOpdQ) 
  ,  without the help of Google :
 ### General
-* Why Python programming is awesome
-* What’s an interactive test
-* Why tests are important
-* How to write Docstrings to create tests
-* How to write documentation for each module and function
-* What are the basic option flags to create tests
-* How to find edge cases
+* How to create a Python package
+* How to create a command interpreter in Python using the  ` cmd `  module
+* What is Unit testing and how to implement it in a large project
+* How to serialize and deserialize a Class
+* How to write and read a JSON file
+* How to manage  ` datetime ` 
+* What is an  ` UUID ` 
+* What is  ` *args `  and how to use it
+* What is  ` **kwargs `  and how to use it
+* How to handle named arguments in a function
 ## Requirements
 ### Python Scripts
 * Allowed editors:  ` vi ` ,  ` vim ` ,  ` emacs ` 
@@ -44,574 +70,580 @@ At the end of this project, you are expected to be able to  [explain to anyone](
 * Your code should use the pycodestyle (version 2.7.*)
 * All your files must be executable
 * The length of your files will be tested using  ` wc ` 
-### Python Test Cases
+* All your modules should have a documentation ( ` python3 -c 'print(__import__("my_module").__doc__)' ` )
+* All your classes should have a documentation ( ` python3 -c 'print(__import__("my_module").MyClass.__doc__)' ` )
+* All your functions (inside and outside a class) should have a documentation ( ` python3 -c 'print(__import__("my_module").my_function.__doc__)' `  and  ` python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)' ` )
+* A documentation is not a simple word, it’s a real sentence explaining what’s the purpose of the module, class or method (the length of it will be verified)
+### Python Unit Tests
 * Allowed editors:  ` vi ` ,  ` vim ` ,  ` emacs ` 
 * All your files should end with a new line
 * All your test files should be inside a folder  ` tests ` 
-* All your test files should be text files (extension:  ` .txt ` )
-* All your tests should be executed by using this command:  ` python3 -m doctest ./tests/* ` 
+* You have to use the [unittest module](https://intranet.hbtn.io/rltoken/QX7d4D__xhOJIGIWZBp39g) 
+
+* All your test files should be python files (extension:  ` .py ` )
+* All your test files and folders should start by  ` test_ ` 
+* Your file organization in the tests folder should be the same as your project
+* e.g., For  ` models/base_model.py ` , unit tests must be in:  ` tests/test_models/test_base_model.py ` 
+* e.g., For  ` models/user.py ` , unit tests must be in:  ` tests/test_models/test_user.py ` 
+* All your tests should be executed by using this command:  ` python3 -m unittest discover tests ` 
+* You can also test file by file by using this command:  ` python3 -m unittest tests/test_models/test_base_model.py ` 
 * All your modules should have a documentation ( ` python3 -c 'print(__import__("my_module").__doc__)' ` )
-* All your functions should have a documentation ( ` python3 -c 'print(__import__("my_module").my_function.__doc__)' ` )
-* A documentation is not a simple word, it’s a real sentence explaining what’s the purpose of the module, class or method (the length of it will be verified)
-* We strongly encourage you to work together on test cases, so that you don’t miss any edge case – The Checker is checking for tests!
-## Trace
-To help you with your journey, feel free to try your code  [here](https://intranet.hbtn.io/rltoken/FjBbm7fv3bEK9W90QW0ysw) 
-  with some dedicated test for each task. You will be able to see in real time your code and what is really happening.
-## Quiz questions
-Show
-#### 
-        
-        Question #0
-    
- Quiz question Body Is this a standardized way to comment a function in Python?
- ` /* Addition function */
-def add(a, b):
-    return a + b
- `  Quiz question Answers * Yes
-
-* No
-
- Quiz question Tips #### 
-        
-        Question #1
-    
- Quiz question Body Is this a standardized way to comment a function in Python?
- ` """" Addition function """
-def add(a, b):
-    return a + b
- `  Quiz question Answers * Yes
-
-* No
-
- Quiz question Tips #### 
-        
-        Question #2
-    
- Quiz question Body Is this a standardized way to comment a function in Python?
- ` ##########
-# Addition function
-##########
-def add(a, b):
-    return a + b
- `  Quiz question Answers * Yes
-
-* No
-
- Quiz question Tips #### 
-        
-        Question #3
-    
- Quiz question Body Is this a standardized way to comment a function in Python?
- ` def add(a, b):
-    """ Addition function """
-    return a + b
- `  Quiz question Answers * Yes
-
-* No
-
- Quiz question Tips #### 
-        
-        Question #4
-    
- Quiz question Body Is this module correctly commented?
- ` #!/usr/bin/python3
-""" 
-    My calculation module
-"""
-import sys
-...
- `  Quiz question Answers * Yes
-
-* No
-
- Quiz question Tips #### 
-        
-        Question #5
-    
- Quiz question Body Is this module correctly commented?
- ` #!/usr/bin/python3
-import sys
-
-""" 
-    My calculation module
-"""
-...
- `  Quiz question Answers * Yes
-
-* No
-
- Quiz question Tips #### Tips:
-Docstring must be before import statements
-#### 
-        
-        Question #6
-    
- Quiz question Body Based on this code, what should all the test cases be? (select multiple)
-```bash
-def uniq(list):
-    """ Returns unique values of a list """
-    u_list = []
-    for item in list:
-        if item not in u_list:
-            u_list.append(item)
-    return u_list
-
-```
- Quiz question Answers * empty list
-
-* list with one element (any type)
-
-* list with 2 different element (same type)
-
-* list with twice the same element (same type)
-
-* list with more than 2 times the same element (same type)
-
-* list with multiple types (integer, string, etc…)
-
-* not a list argument (ex: passing a dictionary to the method)
-
- Quiz question Tips ## Tasks
-### 0. Integers addition
-          mandatory         Progress vs Score           Score: 75.50% (Checks completed: 76.67%)         Task Body Write a function that adds 2 integers.
-* Prototype:  ` def add_integer(a, b=98): ` 
-*  ` a `  and  ` b `  must be integers or floats, otherwise raise a  ` TypeError `  exception with the message  ` a must be an integer `  or  ` b must be an integer ` 
-*  ` a `  and  ` b `  must be first casted to integers if they are float
-* Returns an integer: the addition of  ` a `  and  ` b ` 
-* You are not allowed to import any module
-```bash
-guillaume@ubuntu:~/0x07$ cat 0-main.py
-#!/usr/bin/python3
-add_integer = __import__('0-add_integer').add_integer
-
-print(add_integer(1, 2))
-print(add_integer(100, -2))
-print(add_integer(2))
-print(add_integer(100.3, -2))
-try:
-    print(add_integer(4, "School"))
-except Exception as e:
-    print(e)
-try:
-    print(add_integer(None))
-except Exception as e:
-    print(e)
-
-guillaume@ubuntu:~/0x07$ ./0-main.py
-3
-98
-100
-98
-b must be an integer
-a must be an integer
-guillaume@ubuntu:~/0x07$ python3 -m doctest -v ./tests/0-add_integer.txt | tail -2
-9 passed and 0 failed.
-Test passed.
-guillaume@ubuntu:~/0x07$ python3 -c 'print(__import__("0-add_integer").__doc__)' | wc -l
-5
-guillaume@ubuntu:~/0x07$ python3 -c 'print(__import__("0-add_integer").add_integer.__doc__)' | wc -l
-3
-guillaume@ubuntu:~/0x07$ 
-
-```
- Task URLs  Github information Repo:
-* GitHub repository:  ` holbertonschool-higher_level_programming ` 
-* Directory:  ` 0x07-python-test_driven_development ` 
-* File:  ` 0-add_integer.py, tests/0-add_integer.txt ` 
- Self-paced manual review  Panel footer - Controls 
-### 1. Divide a matrix
-          mandatory         Progress vs Score           Score: 82.05% (Checks completed: 82.05%)         Task Body Write a function that divides all elements of a matrix.
-* Prototype:  ` def matrix_divided(matrix, div): ` 
-*  ` matrix `  must be a list of lists of integers or floats, otherwise raise a  ` TypeError `  exception with the message  ` matrix must be a matrix (list of lists) of integers/floats ` 
-* Each row of the  ` matrix `  must be of the same size, otherwise raise a  ` TypeError `  exception with the message  ` Each row of the matrix must have the same size ` 
-*  ` div `  must be a number (integer or float), otherwise raise a  ` TypeError `  exception with the message  ` div must be a number ` 
-*  ` div `  can’t be equal to  ` 0 ` , otherwise raise a  ` ZeroDivisionError `  exception with the message  ` division by zero ` 
-* All elements of the matrix should be divided by  ` div ` , rounded to 2 decimal places 
-* Returns a new matrix
-* You are not allowed to import any module
-```bash
-guillaume@ubuntu:~/0x07$ cat 2-main.py
-#!/usr/bin/python3
-matrix_divided = __import__('2-matrix_divided').matrix_divided
-
-matrix = [
-    [1, 2, 3],
-    [4, 5, 6]
-]
-print(matrix_divided(matrix, 3))
-print(matrix)
-
-guillaume@ubuntu:~/0x07$ ./2-main.py
-[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
-[[1, 2, 3], [4, 5, 6]]
-guillaume@ubuntu:~/0x07$ python3 -m doctest -v ./tests/2-matrix_divided.txt | tail -2
-5 passed and 0 failed.
-Test passed.
-guillaume@ubuntu:~/0x07$ 
-
-```
-Note: you might have a different number of tests than in the above example. As usual, your tests should cover all possible cases.
- Task URLs  Github information Repo:
-* GitHub repository:  ` holbertonschool-higher_level_programming ` 
-* Directory:  ` 0x07-python-test_driven_development ` 
-* File:  ` 2-matrix_divided.py, tests/2-matrix_divided.txt ` 
- Self-paced manual review  Panel footer - Controls 
-### 2. Say my name
-          mandatory         Progress vs Score           Score: 91.67% (Checks completed: 91.67%)         Task Body Write a function that prints   ` My name is <first name> <last name> ` 
-* Prototype:  ` def say_my_name(first_name, last_name=""): ` 
-*  ` first_name `  and  ` last_name `  must be strings otherwise, raise a  ` TypeError `  exception with the message  ` first_name must be a string `  or  ` last_name must be a string ` 
-* You are not allowed to import any module
-```bash
-guillaume@ubuntu:~/0x07$ cat 3-main.py
-#!/usr/bin/python3
-say_my_name = __import__('3-say_my_name').say_my_name
-
-say_my_name("John", "Smith")
-say_my_name("Walter", "White")
-say_my_name("Bob")
-try:
-    say_my_name(12, "White")
-except Exception as e:
-    print(e)
-
-guillaume@ubuntu:~/0x07$ ./3-main.py | cat -e
-My name is John Smith$
-My name is Walter White$
-My name is Bob $
-first_name must be a string$
-guillaume@ubuntu:~/0x07$ python3 -m doctest -v ./tests/3-say_my_name.txt | tail -2
-5 passed and 0 failed.
-Test passed.
-guillaume@ubuntu:~/0x07$ 
-
-```
-Note: you might have a different number of tests than in the above example. As usual, your tests should cover all possible cases.
- Task URLs  Github information Repo:
-* GitHub repository:  ` holbertonschool-higher_level_programming ` 
-* Directory:  ` 0x07-python-test_driven_development ` 
-* File:  ` 3-say_my_name.py, tests/3-say_my_name.txt ` 
- Self-paced manual review  Panel footer - Controls 
-### 3. Print square
-          mandatory         Progress vs Score           Score: 92.00% (Checks completed: 92.00%)         Task Body Write a function that prints a square with the character   ` # `  .
-* Prototype:  ` def print_square(size): ` 
-*  ` size `  is the size length of the square
-*  ` size `  must be an integer, otherwise raise a  ` TypeError `  exception with the message  ` size must be an integer ` 
-* if  ` size `  is less than  ` 0 ` , raise a  ` ValueError `  exception with the message  ` size must be >= 0 ` 
-* You are not allowed to import any module
-```bash
-guillaume@ubuntu:~/0x07$ cat 4-main.py
-#!/usr/bin/python3
-print_square = __import__('4-print_square').print_square
-
-print_square(4)
-print("")
-print_square(10)
-print("")
-print_square(0)
-print("")
-print_square(1)
-print("")
-try:
-    print_square(-1)
-except Exception as e:
-    print(e)
-print("")
-
-guillaume@ubuntu:~/0x07$ ./4-main.py
-####
-####
-####
-####
-
-##########
-##########
-##########
-##########
-##########
-##########
-##########
-##########
-##########
-##########
-
-
-#
-
-size must be >= 0
-
-guillaume@ubuntu:~/0x07$ python3 -m doctest -v ./tests/4-print_square.txt
-guillaume@ubuntu:~/0x07$ 
-
-```
- Task URLs  Github information Repo:
-* GitHub repository:  ` holbertonschool-higher_level_programming ` 
-* Directory:  ` 0x07-python-test_driven_development ` 
-* File:  ` 4-print_square.py, tests/4-print_square.txt ` 
- Self-paced manual review  Panel footer - Controls 
-### 4. Text indentation
-          mandatory         Progress vs Score           Score: 88.75% (Checks completed: 91.67%)         Task Body Write a function that prints a text with 2 new lines after each of these characters:   ` . `  ,   ` ? `   and   ` : ` 
-* Prototype:  ` def text_indentation(text): ` 
-*  ` text `  must be a string, otherwise raise a  ` TypeError `  exception with the message  ` text must be a string ` 
-* There should be no space at the beginning or at the end of each printed line
-* You are not allowed to import any module
-```bash
-guillaume@ubuntu:~/0x07$ cat 5-main.py
-#!/usr/bin/python3
-text_indentation = __import__('5-text_indentation').text_indentation
-
-text_indentation("""Lorem ipsum dolor sit amet, consectetur adipiscing elit. \
-Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere? \
-Non autem hoc: igitur ne illud quidem. Fortasse id optimum, sed ubi illud: \
-Plus semper voluptatis? Teneo, inquit, finem illi videri nihil dolere. \
-Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum \
-rationi oboediens. Si id dicis, vicimus. Inde sermone vario sex illa a Dipylo \
-stadia confecimus. Sin aliud quid voles, postea. Quae animi affectio suum \
-cuique tribuens atque hanc, quam dico. Utinam quidem dicerent alium alio \
-beatiorem! Iam ruinas videres""")
-
-guillaume@ubuntu:~/0x07$ ./5-main.py | cat -e
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.$
-$
-Quonam modo?$
-$
-Utrum igitur tibi litteram videor an totas paginas commovere?$
-$
-Non autem hoc:$
-$
-igitur ne illud quidem.$
-$
-Fortasse id optimum, sed ubi illud:$
-$
-Plus semper voluptatis?$
-$
-Teneo, inquit, finem illi videri nihil dolere.$
-$
-Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum rationi oboediens.$
-$
-Si id dicis, vicimus.$
-$
-Inde sermone vario sex illa a Dipylo stadia confecimus.$
-$
-Sin aliud quid voles, postea.$
-$
-Quae animi affectio suum cuique tribuens atque hanc, quam dico.$
-$
-Utinam quidem dicerent alium alio beatiorem! Iam ruinas videresguillaume@ubuntu:~/0x07$
-guillaume@ubuntu:~/0x07$ python3 -m doctest -v ./tests/5-text_indentation.txt
-guillaume@ubuntu:~/0x07$ 
-
-```
- Task URLs  Github information Repo:
-* GitHub repository:  ` holbertonschool-higher_level_programming ` 
-* Directory:  ` 0x07-python-test_driven_development ` 
-* File:  ` 5-text_indentation.py, tests/5-text_indentation.txt ` 
- Self-paced manual review  Panel footer - Controls 
-### 5. Max integer - Unittest
-          mandatory         Progress vs Score           Score: 59.20% (Checks completed: 76.00%)         Task Body Since the beginning you have been creating “Interactive tests”. For this exercise, you will add Unittests.
-In this task, you will write unittests for the function   ` def max_integer(list=[]): `  .
-* Your test file should be inside a folder  ` tests ` 
-* You have to use the [unittest module](https://intranet.hbtn.io/rltoken/qMqF1bBJXSAIjg8tugitHQ) 
-
-* Your test file should be python files (extension:  ` .py ` )
-* Your test file should be executed by using this command:  ` python3 -m unittest tests.6-max_integer_test ` 
-* All tests you make must be passable by the function below
+* All your classes should have a documentation ( ` python3 -c 'print(__import__("my_module").MyClass.__doc__)' ` )
+* All your functions (inside and outside a class) should have a documentation ( ` python3 -c 'print(__import__("my_module").my_function.__doc__)' `  and  ` python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)' ` )
 * We strongly encourage you to work together on test cases, so that you don’t miss any edge case
+### GitHub
+There should be one project repository per group. If you clone/fork/whatever a project repository with the same name before the second deadline, you risk a 0% score.
+## More Info
+### Execution
+Your shell should work like this in interactive mode:
 ```bash
-guillaume@ubuntu:~/0x07$ cat 6-max_integer.py
-#!/usr/bin/python3
-"""Module to find the max integer in a list
-"""
+$ ./console.py
+(hbnb) help
+
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
+
+(hbnb) 
+(hbnb) 
+(hbnb) quit
+$
+
+```
+But also in non-interactive mode: (like the Shell project in C)
+```bash
+$ echo "help" | ./console.py
+(hbnb)
+
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
+(hbnb) 
+$
+$ cat test_help
+help
+$
+$ cat test_help | ./console.py
+(hbnb)
+
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
+(hbnb) 
+$
+
+```
+All tests should also pass in non-interactive mode:   ` $ echo "python3 -m unittest discover tests" | bash ` 
+ ![](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2018/6/815046647d23428a14ca.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOU5BHMTQX4%2F20220304%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220304T155845Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=483967000eda183c001bd7626db0d773060d4ea3d69a252b3330c678e8b250b2) 
 
 
-def max_integer(list=[]):
-    """Function to find and return the max integer in a list of integers
-        If the list is empty, the function returns None
-    """
-    if len(list) == 0:
-        return None
-    result = list[0]
-    i = 1
-    while i < len(list):
-        if list[i] > result:
-            result = list[i]
-        i += 1
-    return result
+## Tasks
+### 0. README, AUTHORS
+          mandatory         Progress vs Score  Task Body * Write a  ` README.md ` :* description of the project
+* description of the command interpreter:* how to start it
+* how to use it
+* examples
 
-guillaume@ubuntu:~/0x07$ 
-guillaume@ubuntu:~/0x07$ cat 6-main.py
-#!/usr/bin/python3
-max_integer = __import__('6-max_integer').max_integer
 
-print(max_integer([1, 2, 3, 4]))
-print(max_integer([1, 3, 4, 2]))
-guillaume@ubuntu:~/0x07$
-guillaume@ubuntu:~/0x07$ ./6-main.py
-4
-4
-guillaume@ubuntu:~/0x07$
-guillaume@ubuntu:~/0x07$ python3 -m unittest tests.6-max_integer_test 2>&1 | tail -1
+* You should have an  ` AUTHORS `  file at the root of your repository, listing all individuals having contributed content to the repository. For format, reference [Docker’s AUTHORS page](https://intranet.hbtn.io/rltoken/LhxU3SNypZwn428dmpz_qw) 
+
+* You should use branches and pull requests on GitHub - it will help you as team to organize your work
+ Task URLs  Github information Repo:
+* GitHub repository:  ` AirBnB_clone ` 
+* File:  ` README.md, AUTHORS ` 
+ Self-paced manual review  Panel footer - Controls 
+### 1. Be Pycodestyle compliant!
+          mandatory         Progress vs Score  Task Body Write beautiful code that passes the pycodestyle checks.
+ Task URLs  Github information Repo:
+* GitHub repository:  ` AirBnB_clone ` 
+ Self-paced manual review  Panel footer - Controls 
+### 2. Unittests
+          mandatory         Progress vs Score  Task Body All your files, classes, functions must be tested with unit tests
+```bash
+guillaume@ubuntu:~/AirBnB$ python3 -m unittest discover tests
+...................................................................................
+...................................................................................
+.......................
+----------------------------------------------------------------------
+Ran 189 tests in 13.135s
+
 OK
-guillaume@ubuntu:~/0x07$
-guillaume@ubuntu:~/0x07$ head -7 tests/6-max_integer_test.py 
-#!/usr/bin/python3
-"""Unittest for max_integer([..])
-"""
-import unittest
-max_integer = __import__('6-max_integer').max_integer
+guillaume@ubuntu:~/AirBnB$
 
-class TestMaxInteger(unittest.TestCase):
-guillaume@ubuntu:~/0x07$ 
+```
+Note that this is just an example, the number of tests you create can be different from the above example .
+Warning:
+Unit tests must also pass in non-interactive mode:
+```bash
+guillaume@ubuntu:~/AirBnB$ echo "python3 -m unittest discover tests" | bash
+...................................................................................
+...................................................................................
+.......................
+----------------------------------------------------------------------
+Ran 189 tests in 13.135s
+
+OK
+guillaume@ubuntu:~/AirBnB$
 
 ```
  Task URLs  Github information Repo:
-* GitHub repository:  ` holbertonschool-higher_level_programming ` 
-* Directory:  ` 0x07-python-test_driven_development ` 
-* File:  ` tests/6-max_integer_test.py ` 
+* GitHub repository:  ` AirBnB_clone ` 
+* File:  ` tests/ ` 
  Self-paced manual review  Panel footer - Controls 
-### 6. Matrix multiplication
-          #advanced         Progress vs Score           Score: 0.00% (Checks completed: 0.00%)         Task Body Write a function that multiplies 2 matrices:
-* Read:  [Matrix multiplication - only Matrix product (two matrices)](https://intranet.hbtn.io/rltoken/gG3TcWESGFqiZzHNlMbEKA) 
+### 3. BaseModel
+          mandatory         Progress vs Score  Task Body Write a class   ` BaseModel `   that defines all common attributes/methods for other classes:
+*  ` models/base_model.py ` 
+* Public instance attributes: *  ` id ` : string - assign with an  ` uuid `  when an instance is created:* you can use  ` uuid.uuid4() `  to generate unique  ` id `  but don’t forget to convert to a string
+* the goal is to have unique  ` id `  for each  ` BaseModel ` 
 
+*  ` created_at ` : datetime - assign with the current datetime when an instance is created
+*  ` updated_at ` : datetime - assign with the current datetime when an instance is created and it will be updated every time you change your object
 
-* Prototype:   ` def matrix_mul(m_a, m_b): ` 
+*  ` __str__ ` : should print:  ` [<class name>] (<self.id>) <self.__dict__> ` 
+* Public instance methods:*  ` save(self) ` : updates the public instance attribute  ` updated_at `  with the current datetime
+*  ` to_dict(self) ` : returns a dictionary containing all keys/values of  ` __dict__ `  of the instance:* by using  ` self.__dict__ ` , only instance attributes set will be returned
+* a key  ` __class__ `  must be added to this dictionary with the class name of the object
+*  ` created_at `  and  ` updated_at `  must be converted to string object in ISO format:* format:  ` %Y-%m-%dT%H:%M:%S.%f `  (ex:  ` 2017-06-14T22:31:03.285259 ` ) 
+* you can use  ` isoformat() `  of  ` datetime `  object
 
-*  ` m_a `   and   ` m_b `   must be validated with these requirements in this order
+* This method will be the first piece of the serialization/deserialization process: create a dictionary representation with “simple object type” of our  ` BaseModel ` 
 
-*  ` m_a `   and   ` m_b `   must be an list of lists of integers or floats:
-* if  ` m_a `  or  ` m_b `  is not a list: raise a  ` TypeError `  exception with the message  ` m_a must be a list `  or  ` m_b must be a list ` 
-* if  ` m_a `  or  ` m_b `  is not a list of lists: raise a  ` TypeError `  exception with the message  ` m_a must be a list of lists `  or  ` m_b must be a list of lists ` 
-* if  ` m_a `  or  ` m_b `  is empty (it means:  ` = [] `  or  ` = [[]] ` ): raise a  ` ValueError `  exception with the message  ` m_a can't be empty `  or  ` m_b can't be empty ` 
-* if one element of those list of lists is not an integer or a float: raise a  ` TypeError `  exception with the message  ` m_a should contain only integers or floats `  or  ` m_b should contain only integers or floats ` 
-* if  ` m_a `  or  ` m_b `  is not a rectangle (all ‘rows’ should be of the same size): raise a  ` TypeError `  exception with the message  ` each row of m_a must be of the same size `  or  ` each row of m_b must be of the same size ` 
-
-* If   ` m_a `   and   ` m_b `   can’t be multiplied: raise a   ` ValueError `   exception with the message   ` m_a and m_b can't be multiplied ` 
-
-* You are not allowed to import any module
 
 ```bash
-guillaume@ubuntu:~/0x07$ cat 100-main.py
+guillaume@ubuntu:~/AirBnB$ cat test_base_model.py
 #!/usr/bin/python3
-matrix_mul = __import__('100-matrix_mul').matrix_mul
+from models.base_model import BaseModel
 
-print(matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]]))
-print(matrix_mul([[1, 2]], [[3, 4], [5, 6]]))
+my_model = BaseModel()
+my_model.name = "My First Model"
+my_model.my_number = 89
+print(my_model)
+my_model.save()
+print(my_model)
+my_model_json = my_model.to_dict()
+print(my_model_json)
+print("JSON of my_model:")
+for key in my_model_json.keys():
+    print("\t{}: ({}) - {}".format(key, type(my_model_json[key]), my_model_json[key]))
 
-guillaume@ubuntu:~/0x07$ ./100-main.py 
-[[7, 10], [15, 22]]
-[[13, 16]]
-guillaume@ubuntu:~/0x07$ python3 -m doctest -v ./tests/100-matrix_mul.txt | tail -2
-6 passed and 0 failed.
-Test passed.
-guillaume@ubuntu:~/0x07$ 
+guillaume@ubuntu:~/AirBnB$ ./test_base_model.py
+[BaseModel] (b6a6e15c-c67d-4312-9a75-9d084935e579) {'my_number': 89, 'name': 'My First Model', 'updated_at': datetime.datetime(2017, 9, 28, 21, 5, 54, 119434), 'id': 'b6a6e15c-c67d-4312-9a75-9d084935e579', 'created_at': datetime.datetime(2017, 9, 28, 21, 5, 54, 119427)}
+[BaseModel] (b6a6e15c-c67d-4312-9a75-9d084935e579) {'my_number': 89, 'name': 'My First Model', 'updated_at': datetime.datetime(2017, 9, 28, 21, 5, 54, 119572), 'id': 'b6a6e15c-c67d-4312-9a75-9d084935e579', 'created_at': datetime.datetime(2017, 9, 28, 21, 5, 54, 119427)}
+{'my_number': 89, 'name': 'My First Model', '__class__': 'BaseModel', 'updated_at': '2017-09-28T21:05:54.119572', 'id': 'b6a6e15c-c67d-4312-9a75-9d084935e579', 'created_at': '2017-09-28T21:05:54.119427'}
+JSON of my_model:
+    my_number: (<class 'int'>) - 89
+    name: (<class 'str'>) - My First Model
+    __class__: (<class 'str'>) - BaseModel
+    updated_at: (<class 'str'>) - 2017-09-28T21:05:54.119572
+    id: (<class 'str'>) - b6a6e15c-c67d-4312-9a75-9d084935e579
+    created_at: (<class 'str'>) - 2017-09-28T21:05:54.119427
+
+guillaume@ubuntu:~/AirBnB$ 
 
 ```
  Task URLs  Github information Repo:
-* GitHub repository:  ` holbertonschool-higher_level_programming ` 
-* Directory:  ` 0x07-python-test_driven_development ` 
-* File:  ` 100-matrix_mul.py, tests/100-matrix_mul.txt ` 
+* GitHub repository:  ` AirBnB_clone ` 
+* File:  ` models/base_model.py, models/__init__.py, tests/ ` 
  Self-paced manual review  Panel footer - Controls 
-### 7. Lazy matrix multiplication
-          #advanced         Progress vs Score           Score: 0.00% (Checks completed: 0.00%)         Task Body Write a function that multiplies 2 matrices by using the module  [NumPy](https://intranet.hbtn.io/rltoken/3_FcFGqtWsHzii5VrujTWA) 
+### 4. Create BaseModel from dictionary
+          mandatory         Progress vs Score  Task Body Previously we created a method to generate a dictionary representation of an instance (method   ` to_dict() `  ).
+Now it’s time to re-create an instance with this dictionary representation.
+ ` <class 'BaseModel'> -> to_dict() -> <class 'dict'> -> <class 'BaseModel'>
+ ` Update   ` models/base_model.py `  :
+*  ` __init__(self, *args, **kwargs) ` : * you will use  ` *args, **kwargs `  arguments for the constructor of a  ` BaseModel ` . (more information inside the AirBnB clone concept page)
+*  ` *args `  won’t be used
+* if  ` kwargs `  is not empty:* each key of this dictionary is an attribute name (Note ` __class__ `  from  ` kwargs `  is the only one that should not be added as an attribute. See the example output, below)
+* each value of this dictionary is the value of this attribute name
+* Warning:  ` created_at `  and  ` updated_at `  are strings in this dictionary, but inside your  ` BaseModel `  instance is working with  ` datetime `  object. You have to convert these strings into  ` datetime `  object. Tip: you know the string format of these datetime
 
-To install it:   ` pip3 install numpy==1.15.0 ` 
-* Prototype:  ` def lazy_matrix_mul(m_a, m_b): ` 
-* Test cases should be the same as  ` 100-matrix_mul `  but with new exception type/message
+* otherwise:* create  ` id `  and  ` created_at `  as you did previously (new instance)
+
+
 ```bash
-guillaume@ubuntu:~/0x07$ cat 101-main.py
+guillaume@ubuntu:~/AirBnB$ cat test_base_model_dict.py
 #!/usr/bin/python3
-lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
+from models.base_model import BaseModel
 
-print(lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]]))
-print(lazy_matrix_mul([[1, 2]], [[3, 4], [5, 6]]))
+my_model = BaseModel()
+my_model.name = "My_First_Model"
+my_model.my_number = 89
+print(my_model.id)
+print(my_model)
+print(type(my_model.created_at))
+print("--")
+my_model_json = my_model.to_dict()
+print(my_model_json)
+print("JSON of my_model:")
+for key in my_model_json.keys():
+    print("\t{}: ({}) - {}".format(key, type(my_model_json[key]), my_model_json[key]))
 
-guillaume@ubuntu:~/0x07$ ./101-main.py 
-[[ 7 10]
- [15 22]]
-[[13 16]]
-guillaume@ubuntu:~/0x07$ python3 -m doctest -v ./tests/101-lazy_matrix_mul.txt 
-guillaume@ubuntu:~/0x07$ 
+print("--")
+my_new_model = BaseModel(**my_model_json)
+print(my_new_model.id)
+print(my_new_model)
+print(type(my_new_model.created_at))
+
+print("--")
+print(my_model is my_new_model)
+
+guillaume@ubuntu:~/AirBnB$ ./test_base_model_dict.py
+56d43177-cc5f-4d6c-a0c1-e167f8c27337
+[BaseModel] (56d43177-cc5f-4d6c-a0c1-e167f8c27337) {'id': '56d43177-cc5f-4d6c-a0c1-e167f8c27337', 'created_at': datetime.datetime(2017, 9, 28, 21, 3, 54, 52298), 'my_number': 89, 'updated_at': datetime.datetime(2017, 9, 28, 21, 3, 54, 52302), 'name': 'My_First_Model'}
+<class 'datetime.datetime'>
+--
+{'id': '56d43177-cc5f-4d6c-a0c1-e167f8c27337', 'created_at': '2017-09-28T21:03:54.052298', '__class__': 'BaseModel', 'my_number': 89, 'updated_at': '2017-09-28T21:03:54.052302', 'name': 'My_First_Model'}
+JSON of my_model:
+    id: (<class 'str'>) - 56d43177-cc5f-4d6c-a0c1-e167f8c27337
+    created_at: (<class 'str'>) - 2017-09-28T21:03:54.052298
+    __class__: (<class 'str'>) - BaseModel
+    my_number: (<class 'int'>) - 89
+    updated_at: (<class 'str'>) - 2017-09-28T21:03:54.052302
+    name: (<class 'str'>) - My_First_Model
+--
+56d43177-cc5f-4d6c-a0c1-e167f8c27337
+[BaseModel] (56d43177-cc5f-4d6c-a0c1-e167f8c27337) {'id': '56d43177-cc5f-4d6c-a0c1-e167f8c27337', 'created_at': datetime.datetime(2017, 9, 28, 21, 3, 54, 52298), 'my_number': 89, 'updated_at': datetime.datetime(2017, 9, 28, 21, 3, 54, 52302), 'name': 'My_First_Model'}
+<class 'datetime.datetime'>
+--
+False
+guillaume@ubuntu:~/AirBnB$ 
 
 ```
  Task URLs  Github information Repo:
-* GitHub repository:  ` holbertonschool-higher_level_programming ` 
-* Directory:  ` 0x07-python-test_driven_development ` 
-* File:  ` 101-lazy_matrix_mul.py, tests/101-lazy_matrix_mul.txt ` 
+* GitHub repository:  ` AirBnB_clone ` 
+* File:  ` models/base_model.py, tests/ ` 
  Self-paced manual review  Panel footer - Controls 
-### 8. CPython #3: Python Strings
-          #advanced         Progress vs Score           Score: 0.00% (Checks completed: 0.00%)         Task Body  ![](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2020/9/2c4f2b92514745519f833afdf5bc5f3eaff8c6ca.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOU5BHMTQX4%2F20220304%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220304T155037Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=d2f2007f66775dcc3aa2236cf377f0e9d8df8b5a63973c510723b239a251632c) 
-
-Create a function that prints Python strings.
-* Prototype:  ` void print_python_string(PyObject *p); ` 
-* Format: see example
-* If  ` p `  is not a valid string, print an error message (see example)
-* Read: [Unicode HOWTO](https://intranet.hbtn.io/rltoken/IOH653eTNMgJcUTeV2jM2w) 
-
-About:
-* Python version: 3.4
-* You are allowed to use the C standard library
-* Your shared library will be compiled with this command line:  ` gcc -shared -Wl,-soname,libPython.so -o libPython.so -fPIC -I/usr/include/python3.4 102-python.c ` 
+### 5. Store first object
+          mandatory         Progress vs Score  Task Body Now we can recreate a   ` BaseModel `   from another one by using a dictionary representation:
+ ` <class 'BaseModel'> -> to_dict() -> <class 'dict'> -> <class 'BaseModel'>
+ ` It’s great but it’s still not persistent: every time you launch the program, you don’t restore all objects created before… The first way you will see here is to save these objects to a file.
+Writing the dictionary representation to a file won’t be relevant:
+* Python doesn’t know how to convert a string to a dictionary (easily)
+* It’s not human readable
+* Using this file with another program in Python or other language will be hard.
+So, you will convert the dictionary representation to a JSON string. JSON is a standard representation of a data structure. With this format, humans can read and all programming languages have a JSON reader and writer.
+Now the flow of serialization-deserialization will be:
 ```bash
-julien@ubuntu:~/0x07. Pyhton Strings$ cat 102-tests.py
-import ctypes
+<class 'BaseModel'> -> to_dict() -> <class 'dict'> -> JSON dump -> <class 'str'> -> FILE -> <class 'str'> -> JSON load -> <class 'dict'> -> <class 'BaseModel'>
 
-lib = ctypes.CDLL('./libPython.so')
-lib.print_python_string.argtypes = [ctypes.py_object]
-s = "The spoon does not exist"
-lib.print_python_string(s)
-s = "ложка не существует"
-lib.print_python_string(s)
-s = "La cuillère n'existe pas"
-lib.print_python_string(s)
-s = "勺子不存在"
-lib.print_python_string(s)
-s = "숟가락은 존재하지 않는다."
-lib.print_python_string(s)
-s = "スプーンは存在しない"
-lib.print_python_string(s)
-s = b"The spoon does not exist"
-lib.print_python_string(s)
-julien@ubuntu:~/0x07. Pyhton Strings$ gcc -shared -Wl,-soname,libPython.so -o libPython.so -fPIC -I/usr/include/python3.4 102-python.c
-julien@ubuntu:~/0x07. Pyhton Strings$ python3 ./102-tests.py
-[.] string object info
-  type: compact ascii
-  length: 24
-  value: The spoon does not exist
-[.] string object info
-  type: compact unicode object
-  length: 19
-  value: ложка не существует
-[.] string object info
-  type: compact unicode object
-  length: 24
-  value: La cuillère n'existe pas
-[.] string object info
-  type: compact unicode object
-  length: 5
-  value: 勺子不存在
-[.] string object info
-  type: compact unicode object
-  length: 14
-  value: 숟가락은 존재하지 않는다.
-[.] string object info
-  type: compact unicode object
-  length: 10
-  value: スプーンは存在しない
-[.] string object info
-  [ERROR] Invalid String Object
-julien@ubuntu:~/0x07. Pyhton Strings$ 
+```
+Magic right?
+Terms:
+* simple Python data structure: Dictionaries, arrays, number and string. ex:  ` { '12': { 'numbers': [1, 2, 3], 'name': "John" } } ` 
+* JSON string representation: String representing a simple data structure in JSON format. ex:  ` '{ "12": { "numbers": [1, 2, 3], "name": "John" } }' ` 
+Write a class   ` FileStorage `   that serializes instances to a JSON file and deserializes JSON file to instances:
+*  ` models/engine/file_storage.py ` 
+* Private class attributes:*  ` __file_path ` : string - path to the JSON file (ex:  ` file.json ` )
+*  ` __objects ` : dictionary - empty but will store all objects by  ` <class name>.id `  (ex: to store a  ` BaseModel `  object with  ` id=12121212 ` , the key will be  ` BaseModel.12121212 ` )
+
+* Public instance methods:*  ` all(self) ` : returns the dictionary  ` __objects ` 
+*  ` new(self, obj) ` : sets in  ` __objects `  the  ` obj `  with key  ` <obj class name>.id ` 
+*  ` save(self) ` : serializes  ` __objects `  to the JSON file (path:  ` __file_path ` )
+*  ` reload(self) ` : deserializes the JSON file to  ` __objects `  (only if the JSON file ( ` __file_path ` ) exists ; otherwise, do nothing. If the file doesn’t exist, no exception should be raised)
+
+Update   ` models/__init__.py `  : to create a unique   ` FileStorage `   instance for your application
+* import  ` file_storage.py ` 
+* create the variable  ` storage ` , an instance of  ` FileStorage ` 
+* call  ` reload() `  method on this variable
+Update   ` models/base_model.py `  : to link your   ` BaseModel `   to   ` FileStorage `   by using the variable   ` storage ` 
+* import the variable  ` storage ` 
+* in the method  ` save(self) ` :* call  ` save(self) `  method of  ` storage ` 
+
+*  ` __init__(self, *args, **kwargs) ` : * if it’s a new instance (not from a dictionary representation), add a call to the method  ` new(self) `  on  ` storage ` 
+
+```bash
+guillaume@ubuntu:~/AirBnB$ cat test_save_reload_base_model.py
+#!/usr/bin/python3
+from models import storage
+from models.base_model import BaseModel
+
+all_objs = storage.all()
+print("-- Reloaded objects --")
+for obj_id in all_objs.keys():
+    obj = all_objs[obj_id]
+    print(obj)
+
+print("-- Create a new object --")
+my_model = BaseModel()
+my_model.name = "My_First_Model"
+my_model.my_number = 89
+my_model.save()
+print(my_model)
+
+guillaume@ubuntu:~/AirBnB$ cat file.json
+cat: file.json: No such file or directory
+guillaume@ubuntu:~/AirBnB$ 
+guillaume@ubuntu:~/AirBnB$ ./test_save_reload_base_model.py
+-- Reloaded objects --
+-- Create a new object --
+[BaseModel] (ee49c413-023a-4b49-bd28-f2936c95460d) {'my_number': 89, 'updated_at': datetime.datetime(2017, 9, 28, 21, 7, 25, 47381), 'created_at': datetime.datetime(2017, 9, 28, 21, 7, 25, 47372), 'name': 'My_First_Model', 'id': 'ee49c413-023a-4b49-bd28-f2936c95460d'}
+guillaume@ubuntu:~/AirBnB$ 
+guillaume@ubuntu:~/AirBnB$ cat file.json ; echo ""
+{"BaseModel.ee49c413-023a-4b49-bd28-f2936c95460d": {"my_number": 89, "__class__": "BaseModel", "updated_at": "2017-09-28T21:07:25.047381", "created_at": "2017-09-28T21:07:25.047372", "name": "My_First_Model", "id": "ee49c413-023a-4b49-bd28-f2936c95460d"}}
+guillaume@ubuntu:~/AirBnB$
+guillaume@ubuntu:~/AirBnB$ ./test_save_reload_base_model.py
+-- Reloaded objects --
+[BaseModel] (ee49c413-023a-4b49-bd28-f2936c95460d) {'name': 'My_First_Model', 'id': 'ee49c413-023a-4b49-bd28-f2936c95460d', 'updated_at': datetime.datetime(2017, 9, 28, 21, 7, 25, 47381), 'my_number': 89, 'created_at': datetime.datetime(2017, 9, 28, 21, 7, 25, 47372)}
+-- Create a new object --
+[BaseModel] (080cce84-c574-4230-b82a-9acb74ad5e8c) {'name': 'My_First_Model', 'id': '080cce84-c574-4230-b82a-9acb74ad5e8c', 'updated_at': datetime.datetime(2017, 9, 28, 21, 7, 51, 973308), 'my_number': 89, 'created_at': datetime.datetime(2017, 9, 28, 21, 7, 51, 973301)}
+guillaume@ubuntu:~/AirBnB$ 
+guillaume@ubuntu:~/AirBnB$ ./test_save_reload_base_model.py
+-- Reloaded objects --
+[BaseModel] (080cce84-c574-4230-b82a-9acb74ad5e8c) {'id': '080cce84-c574-4230-b82a-9acb74ad5e8c', 'updated_at': datetime.datetime(2017, 9, 28, 21, 7, 51, 973308), 'created_at': datetime.datetime(2017, 9, 28, 21, 7, 51, 973301), 'name': 'My_First_Model', 'my_number': 89}
+[BaseModel] (ee49c413-023a-4b49-bd28-f2936c95460d) {'id': 'ee49c413-023a-4b49-bd28-f2936c95460d', 'updated_at': datetime.datetime(2017, 9, 28, 21, 7, 25, 47381), 'created_at': datetime.datetime(2017, 9, 28, 21, 7, 25, 47372), 'name': 'My_First_Model', 'my_number': 89}
+-- Create a new object --
+[BaseModel] (e79e744a-55d4-45a3-b74a-ca5fae74e0e2) {'id': 'e79e744a-55d4-45a3-b74a-ca5fae74e0e2', 'updated_at': datetime.datetime(2017, 9, 28, 21, 8, 6, 151750), 'created_at': datetime.datetime(2017, 9, 28, 21, 8, 6, 151711), 'name': 'My_First_Model', 'my_number': 89}
+guillaume@ubuntu:~/AirBnB$ 
+guillaume@ubuntu:~/AirBnB$ cat file.json ; echo ""
+{"BaseModel.e79e744a-55d4-45a3-b74a-ca5fae74e0e2": {"__class__": "BaseModel", "id": "e79e744a-55d4-45a3-b74a-ca5fae74e0e2", "updated_at": "2017-09-28T21:08:06.151750", "created_at": "2017-09-28T21:08:06.151711", "name": "My_First_Model", "my_number": 89}, "BaseModel.080cce84-c574-4230-b82a-9acb74ad5e8c": {"__class__": "BaseModel", "id": "080cce84-c574-4230-b82a-9acb74ad5e8c", "updated_at": "2017-09-28T21:07:51.973308", "created_at": "2017-09-28T21:07:51.973301", "name": "My_First_Model", "my_number": 89}, "BaseModel.ee49c413-023a-4b49-bd28-f2936c95460d": {"__class__": "BaseModel", "id": "ee49c413-023a-4b49-bd28-f2936c95460d", "updated_at": "2017-09-28T21:07:25.047381", "created_at": "2017-09-28T21:07:25.047372", "name": "My_First_Model", "my_number": 89}}
+guillaume@ubuntu:~/AirBnB$ 
 
 ```
  Task URLs  Github information Repo:
-* GitHub repository:  ` holbertonschool-higher_level_programming ` 
-* Directory:  ` 0x07-python-test_driven_development ` 
-* File:  ` 102-python.c ` 
+* GitHub repository:  ` AirBnB_clone ` 
+* File: ```bash
+models/engine/file_storage.py, models/engine/__init__.py, models/__init__.py, models/base_model.py, tests/
+```
+
  Self-paced manual review  Panel footer - Controls 
-×#### Recommended Sandboxes
+### 6. Console 0.0.1
+          mandatory         Progress vs Score  Task Body Write a program called   ` console.py `   that contains the entry point of the command interpreter:
+* You must use the module  ` cmd ` 
+* Your class definition must be:  ` class HBNBCommand(cmd.Cmd): ` 
+* Your command interpreter should implement:*  ` quit `  and  ` EOF `  to exit the program
+*  ` help `  (this action is provided by default by  ` cmd `  but you should keep it updated and documented as you work through tasks)
+* a custom prompt:  ` (hbnb) ` 
+* an empty line +  ` ENTER `  shouldn’t execute anything
+
+* Your code should not be executed when imported
+Warning:
+You should end your file with:
+ ` if __name__ == '__main__':
+    HBNBCommand().cmdloop()
+ ` to make your program executable except when imported.Please don’t add anything around - the Checker won’t like it otherwise
+```bash
+guillaume@ubuntu:~/AirBnB$ ./console.py
+(hbnb) help
+
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
+
+(hbnb) 
+(hbnb) help quit
+Quit command to exit the program
+
+(hbnb) 
+(hbnb) 
+(hbnb) quit 
+guillaume@ubuntu:~/AirBnB$ 
+
+```
+No unittests needed
+ Task URLs  Github information Repo:
+* GitHub repository:  ` AirBnB_clone ` 
+* File:  ` console.py ` 
+ Self-paced manual review  Panel footer - Controls 
+### 7. Console 0.1
+          mandatory         Progress vs Score  Task Body Update your command interpreter (  ` console.py `  ) to have these commands:
+*  ` create ` : Creates a new instance of  ` BaseModel ` , saves it (to the JSON file) and prints the  ` id ` . Ex:  ` $ create BaseModel ` * If the class name is missing, print  ` ** class name missing ** `  (ex:  ` $ create ` )
+* If the class name doesn’t exist, print  ` ** class doesn't exist ** `  (ex:  ` $ create MyModel ` )
+
+*  ` show ` : Prints the string representation of an instance based on the class name and  ` id ` . Ex:  ` $ show BaseModel 1234-1234-1234 ` .* If the class name is missing, print  ` ** class name missing ** `  (ex:  ` $ show ` )
+* If the class name doesn’t exist, print  ` ** class doesn't exist ** `  (ex:  ` $ show MyModel ` )
+* If the  ` id `  is missing, print  ` ** instance id missing ** `  (ex:  ` $ show BaseModel ` )
+* If the instance of the class name doesn’t exist for the  ` id ` , print  ` ** no instance found ** `  (ex:  ` $ show BaseModel 121212 ` )
+
+*  ` destroy ` : Deletes an instance based on the class name and  ` id `  (save the change into the JSON file). Ex:  ` $ destroy BaseModel 1234-1234-1234 ` .* If the class name is missing, print  ` ** class name missing ** `  (ex:  ` $ destroy ` )
+* If the class name doesn’t exist, print  ` ** class doesn't exist ** (ex: ` $ destroy MyModel ` ) ` 
+* If the  ` id `  is missing, print  ` ** instance id missing ** `  (ex:  ` $ destroy BaseModel ` )
+* If the instance of the class name doesn’t exist for the  ` id ` , print  ` ** no instance found ** `  (ex:  ` $ destroy BaseModel 121212 ` )
+
+*  ` all ` : Prints all string representation of all instances based or not on the class name. Ex:  ` $ all BaseModel `  or  ` $ all ` .* The printed result must be a list of strings (like the example below)
+* If the class name doesn’t exist, print  ` ** class doesn't exist ** `  (ex:  ` $ all MyModel ` )
+
+*  ` update ` : Updates an instance based on the class name and  ` id `  by adding or updating attribute (save the change into the JSON file). Ex:  ` $ update BaseModel 1234-1234-1234 email "aibnb@mail.com" ` .* Usage:  ` update <class name> <id> <attribute name> "<attribute value>" ` 
+* Only one attribute can be updated at the time
+* You can assume the attribute name is valid (exists for this model)
+* The attribute value must be casted to the attribute type 
+* If the class name is missing, print  ` ** class name missing ** `  (ex:  ` $ update ` )
+* If the class name doesn’t exist, print  ` ** class doesn't exist ** `  (ex:  ` $ update MyModel ` )
+* If the  ` id `  is missing, print  ` ** instance id missing ** `  (ex:  ` $ update BaseModel ` )
+* If the instance of the class name doesn’t exist for the  ` id ` , print  ` ** no instance found ** `   (ex:  ` $ update BaseModel 121212 ` )
+* If the attribute name is missing, print  ` ** attribute name missing ** `  (ex:  ` $ update BaseModel existing-id ` )
+* If the value for the attribute name doesn’t exist, print  ` ** value missing ** `  (ex:  ` $ update BaseModel existing-id first_name ` )
+* All other arguments should not be used (Ex:  ` $ update BaseModel 1234-1234-1234 email "aibnb@mail.com" first_name "Betty" `  =  ` $ update BaseModel 1234-1234-1234 email "aibnb@mail.com" ` )
+*  ` id ` ,  ` created_at `  and  ` updated_at `  cant’ be updated. You can assume they won’t be passed in the  ` update `  command
+* Only “simple” arguments can be updated: string, integer and float. You can assume nobody will try to update list of ids or datetime
+
+Let’s add some rules:
+* You can assume arguments are always in the right order
+* Each arguments are separated by a space
+* A string argument with a space must be between double quote
+* The error management starts from the first argument to the last one
+```bash
+guillaume@ubuntu:~/AirBnB$ ./console.py
+(hbnb) all MyModel
+** class doesn't exist **
+(hbnb) show BaseModel
+** instance id missing **
+(hbnb) show BaseModel My_First_Model
+** no instance found **
+(hbnb) create BaseModel
+49faff9a-6318-451f-87b6-910505c55907
+(hbnb) all BaseModel
+["[BaseModel] (49faff9a-6318-451f-87b6-910505c55907) {'created_at': datetime.datetime(2017, 10, 2, 3, 10, 25, 903293), 'id': '49faff9a-6318-451f-87b6-910505c55907', 'updated_at': datetime.datetime(2017, 10, 2, 3, 10, 25, 903300)}"]
+(hbnb) show BaseModel 49faff9a-6318-451f-87b6-910505c55907
+[BaseModel] (49faff9a-6318-451f-87b6-910505c55907) {'created_at': datetime.datetime(2017, 10, 2, 3, 10, 25, 903293), 'id': '49faff9a-6318-451f-87b6-910505c55907', 'updated_at': datetime.datetime(2017, 10, 2, 3, 10, 25, 903300)}
+(hbnb) destroy
+** class name missing **
+(hbnb) update BaseModel 49faff9a-6318-451f-87b6-910505c55907 first_name "Betty"
+(hbnb) show BaseModel 49faff9a-6318-451f-87b6-910505c55907
+[BaseModel] (49faff9a-6318-451f-87b6-910505c55907) {'first_name': 'Betty', 'id': '49faff9a-6318-451f-87b6-910505c55907', 'created_at': datetime.datetime(2017, 10, 2, 3, 10, 25, 903293), 'updated_at': datetime.datetime(2017, 10, 2, 3, 11, 3, 49401)}
+(hbnb) create BaseModel
+2dd6ef5c-467c-4f82-9521-a772ea7d84e9
+(hbnb) all BaseModel
+["[BaseModel] (2dd6ef5c-467c-4f82-9521-a772ea7d84e9) {'id': '2dd6ef5c-467c-4f82-9521-a772ea7d84e9', 'created_at': datetime.datetime(2017, 10, 2, 3, 11, 23, 639717), 'updated_at': datetime.datetime(2017, 10, 2, 3, 11, 23, 639724)}", "[BaseModel] (49faff9a-6318-451f-87b6-910505c55907) {'first_name': 'Betty', 'id': '49faff9a-6318-451f-87b6-910505c55907', 'created_at': datetime.datetime(2017, 10, 2, 3, 10, 25, 903293), 'updated_at': datetime.datetime(2017, 10, 2, 3, 11, 3, 49401)}"]
+(hbnb) destroy BaseModel 49faff9a-6318-451f-87b6-910505c55907
+(hbnb) show BaseModel 49faff9a-6318-451f-87b6-910505c55907
+** no instance found **
+(hbnb) 
+
+```
+No unittests needed
+ Task URLs  Github information Repo:
+* GitHub repository:  ` AirBnB_clone ` 
+* File:  ` console.py ` 
+ Self-paced manual review  Panel footer - Controls 
+### 8. First User
+          mandatory         Progress vs Score  Task Body Write a class   ` User `   that inherits from   ` BaseModel `  :
+*  ` models/user.py ` 
+* Public class attributes:*  ` email ` : string - empty string
+*  ` password ` : string - empty string
+*  ` first_name ` : string - empty string
+*  ` last_name ` : string - empty string
+
+Update   ` FileStorage `   to manage correctly serialization and deserialization of   ` User `  .
+Update your command interpreter (  ` console.py `  ) to allow   ` show `  ,   ` create `  ,   ` destroy `  ,   ` update `   and   ` all `   used with   ` User `  .
+```bash
+guillaume@ubuntu:~/AirBnB$ cat test_save_reload_user.py
+#!/usr/bin/python3
+from models import storage
+from models.base_model import BaseModel
+from models.user import User
+
+all_objs = storage.all()
+print("-- Reloaded objects --")
+for obj_id in all_objs.keys():
+    obj = all_objs[obj_id]
+    print(obj)
+
+print("-- Create a new User --")
+my_user = User()
+my_user.first_name = "Betty"
+my_user.last_name = "Bar"
+my_user.email = "airbnb@mail.com"
+my_user.password = "root"
+my_user.save()
+print(my_user)
+
+print("-- Create a new User 2 --")
+my_user2 = User()
+my_user2.first_name = "John"
+my_user2.email = "airbnb2@mail.com"
+my_user2.password = "root"
+my_user2.save()
+print(my_user2)
+
+guillaume@ubuntu:~/AirBnB$ cat file.json ; echo ""
+{"BaseModel.2bf3ebfd-a220-49ee-9ae6-b01c75f6f6a4": {"__class__": "BaseModel", "id": "2bf3ebfd-a220-49ee-9ae6-b01c75f6f6a4", "updated_at": "2017-09-28T21:11:14.333862", "created_at": "2017-09-28T21:11:14.333852"}, "BaseModel.a42ee380-c959-450e-ad29-c840a898cfce": {"__class__": "BaseModel", "id": "a42ee380-c959-450e-ad29-c840a898cfce", "updated_at": "2017-09-28T21:11:15.504296", "created_at": "2017-09-28T21:11:15.504287"}, "BaseModel.af9b4cbd-2ce1-4e6e-8259-f578097dd15f": {"__class__": "BaseModel", "id": "af9b4cbd-2ce1-4e6e-8259-f578097dd15f", "updated_at": "2017-09-28T21:11:12.971544", "created_at": "2017-09-28T21:11:12.971521"}, "BaseModel.38a22b25-ae9c-4fa9-9f94-59b3eb51bfba": {"__class__": "BaseModel", "id": "38a22b25-ae9c-4fa9-9f94-59b3eb51bfba", "updated_at": "2017-09-28T21:11:13.753347", "created_at": "2017-09-28T21:11:13.753337"}, "BaseModel.9bf17966-b092-4996-bd33-26a5353cccb4": {"__class__": "BaseModel", "id": "9bf17966-b092-4996-bd33-26a5353cccb4", "updated_at": "2017-09-28T21:11:14.963058", "created_at": "2017-09-28T21:11:14.963049"}}
+guillaume@ubuntu:~/AirBnB$
+guillaume@ubuntu:~/AirBnB$ ./test_save_reload_user.py
+-- Reloaded objects --
+[BaseModel] (38a22b25-ae9c-4fa9-9f94-59b3eb51bfba) {'id': '38a22b25-ae9c-4fa9-9f94-59b3eb51bfba', 'created_at': datetime.datetime(2017, 9, 28, 21, 11, 13, 753337), 'updated_at': datetime.datetime(2017, 9, 28, 21, 11, 13, 753347)}
+[BaseModel] (9bf17966-b092-4996-bd33-26a5353cccb4) {'id': '9bf17966-b092-4996-bd33-26a5353cccb4', 'created_at': datetime.datetime(2017, 9, 28, 21, 11, 14, 963049), 'updated_at': datetime.datetime(2017, 9, 28, 21, 11, 14, 963058)}
+[BaseModel] (2bf3ebfd-a220-49ee-9ae6-b01c75f6f6a4) {'id': '2bf3ebfd-a220-49ee-9ae6-b01c75f6f6a4', 'created_at': datetime.datetime(2017, 9, 28, 21, 11, 14, 333852), 'updated_at': datetime.datetime(2017, 9, 28, 21, 11, 14, 333862)}
+[BaseModel] (a42ee380-c959-450e-ad29-c840a898cfce) {'id': 'a42ee380-c959-450e-ad29-c840a898cfce', 'created_at': datetime.datetime(2017, 9, 28, 21, 11, 15, 504287), 'updated_at': datetime.datetime(2017, 9, 28, 21, 11, 15, 504296)}
+[BaseModel] (af9b4cbd-2ce1-4e6e-8259-f578097dd15f) {'id': 'af9b4cbd-2ce1-4e6e-8259-f578097dd15f', 'created_at': datetime.datetime(2017, 9, 28, 21, 11, 12, 971521), 'updated_at': datetime.datetime(2017, 9, 28, 21, 11, 12, 971544)}
+-- Create a new User --
+[User] (38f22813-2753-4d42-b37c-57a17f1e4f88) {'id': '38f22813-2753-4d42-b37c-57a17f1e4f88', 'created_at': datetime.datetime(2017, 9, 28, 21, 11, 42, 848279), 'updated_at': datetime.datetime(2017, 9, 28, 21, 11, 42, 848291), 'email': 'airbnb@mail.com', 'first_name': 'Betty', 'last_name': 'Bar', 'password': 'root'}
+-- Create a new User 2 --
+[User] (d0ef8146-4664-4de5-8e89-096d667b728e) {'id': 'd0ef8146-4664-4de5-8e89-096d667b728e', 'created_at': datetime.datetime(2017, 9, 28, 21, 11, 42, 848280), 'updated_at': datetime.datetime(2017, 9, 28, 21, 11, 42, 848294), 'email': 'airbnb2@mail.com', 'first_name': 'John', 'password': 'root'}
+guillaume@ubuntu:~/AirBnB$
+guillaume@ubuntu:~/AirBnB$ cat file.json ; echo ""
+{"BaseModel.af9b4cbd-2ce1-4e6e-8259-f578097dd15f": {"id": "af9b4cbd-2ce1-4e6e-8259-f578097dd15f", "updated_at": "2017-09-28T21:11:12.971544", "created_at": "2017-09-28T21:11:12.971521", "__class__": "BaseModel"}, "BaseModel.38a22b25-ae9c-4fa9-9f94-59b3eb51bfba": {"id": "38a22b25-ae9c-4fa9-9f94-59b3eb51bfba", "updated_at": "2017-09-28T21:11:13.753347", "created_at": "2017-09-28T21:11:13.753337", "__class__": "BaseModel"}, "BaseModel.9bf17966-b092-4996-bd33-26a5353cccb4": {"id": "9bf17966-b092-4996-bd33-26a5353cccb4", "updated_at": "2017-09-28T21:11:14.963058", "created_at": "2017-09-28T21:11:14.963049", "__class__": "BaseModel"}, "BaseModel.2bf3ebfd-a220-49ee-9ae6-b01c75f6f6a4": {"id": "2bf3ebfd-a220-49ee-9ae6-b01c75f6f6a4", "updated_at": "2017-09-28T21:11:14.333862", "created_at": "2017-09-28T21:11:14.333852", "__class__": "BaseModel"}, "BaseModel.a42ee380-c959-450e-ad29-c840a898cfce": {"id": "a42ee380-c959-450e-ad29-c840a898cfce", "updated_at": "2017-09-28T21:11:15.504296", "created_at": "2017-09-28T21:11:15.504287", "__class__": "BaseModel"}, "User.38f22813-2753-4d42-b37c-57a17f1e4f88": {"id": "38f22813-2753-4d42-b37c-57a17f1e4f88", "created_at": "2017-09-28T21:11:42.848279", "updated_at": "2017-09-28T21:11:42.848291", "email": "airbnb@mail.com", "first_name": "Betty", "__class__": "User", "last_name": "Bar", "password": "root"}, "User.d0ef8146-4664-4de5-8e89-096d667b728e": {"id": "d0ef8146-4664-4de5-8e89-096d667b728e", "created_at": "2017-09-28T21:11:42.848280", "updated_at": "2017-09-28T21:11:42.848294", "email": "airbnb_2@mail.com", "first_name": "John", "__class__": "User", "password": "root"}}
+guillaume@ubuntu:~/AirBnB$ 
+guillaume@ubuntu:~/AirBnB$ ./test_save_reload_user.py
+-- Reloaded objects --
+[BaseModel] (af9b4cbd-2ce1-4e6e-8259-f578097dd15f) {'updated_at': datetime.datetime(2017, 9, 28, 21, 11, 12, 971544), 'id': 'af9b4cbd-2ce1-4e6e-8259-f578097dd15f', 'created_at': datetime.datetime(2017, 9, 28, 21, 11, 12, 971521)}
+[BaseModel] (2bf3ebfd-a220-49ee-9ae6-b01c75f6f6a4) {'updated_at': datetime.datetime(2017, 9, 28, 21, 11, 14, 333862), 'id': '2bf3ebfd-a220-49ee-9ae6-b01c75f6f6a4', 'created_at': datetime.datetime(2017, 9, 28, 21, 11, 14, 333852)}
+[BaseModel] (9bf17966-b092-4996-bd33-26a5353cccb4) {'updated_at': datetime.datetime(2017, 9, 28, 21, 11, 14, 963058), 'id': '9bf17966-b092-4996-bd33-26a5353cccb4', 'created_at': datetime.datetime(2017, 9, 28, 21, 11, 14, 963049)}
+[BaseModel] (a42ee380-c959-450e-ad29-c840a898cfce) {'updated_at': datetime.datetime(2017, 9, 28, 21, 11, 15, 504296), 'id': 'a42ee380-c959-450e-ad29-c840a898cfce', 'created_at': datetime.datetime(2017, 9, 28, 21, 11, 15, 504287)}
+[BaseModel] (38a22b25-ae9c-4fa9-9f94-59b3eb51bfba) {'updated_at': datetime.datetime(2017, 9, 28, 21, 11, 13, 753347), 'id': '38a22b25-ae9c-4fa9-9f94-59b3eb51bfba', 'created_at': datetime.datetime(2017, 9, 28, 21, 11, 13, 753337)}
+[User] (38f22813-2753-4d42-b37c-57a17f1e4f88) {'password': '63a9f0ea7bb98050796b649e85481845', 'created_at': datetime.datetime(2017, 9, 28, 21, 11, 42, 848279), 'email': 'airbnb@mail.com', 'updated_at': datetime.datetime(2017, 9, 28, 21, 11, 42, 848291), 'last_name': 'Bar', 'id': '38f22813-2753-4d42-b37c-57a17f1e4f88', 'first_name': 'Betty'}
+[User] (d0ef8146-4664-4de5-8e89-096d667b728e) {'password': '63a9f0ea7bb98050796b649e85481845', 'created_at': datetime.datetime(2017, 9, 28, 21, 11, 42, 848280), 'email': 'airbnb_2@mail.com', 'updated_at': datetime.datetime(2017, 9, 28, 21, 11, 42, 848294), 'id': 'd0ef8146-4664-4de5-8e89-096d667b728e', 'first_name': 'John'}
+-- Create a new User --
+[User] (246c227a-d5c1-403d-9bc7-6a47bb9f0f68) {'password': 'root', 'created_at': datetime.datetime(2017, 9, 28, 21, 12, 19, 611352), 'email': 'airbnb@mail.com', 'updated_at': datetime.datetime(2017, 9, 28, 21, 12, 19, 611363), 'last_name': 'Bar', 'id': '246c227a-d5c1-403d-9bc7-6a47bb9f0f68', 'first_name': 'Betty'}
+-- Create a new User 2 --
+[User] (fce12f8a-fdb6-439a-afe8-2881754de71c) {'password': 'root', 'created_at': datetime.datetime(2017, 9, 28, 21, 12, 19, 611354), 'email': 'airbnb_2@mail.com', 'updated_at': datetime.datetime(2017, 9, 28, 21, 12, 19, 611368), 'id': 'fce12f8a-fdb6-439a-afe8-2881754de71c', 'first_name': 'John'}
+guillaume@ubuntu:~/AirBnB$
+guillaume@ubuntu:~/AirBnB$ cat file.json ; echo ""
+{"BaseModel.af9b4cbd-2ce1-4e6e-8259-f578097dd15f": {"updated_at": "2017-09-28T21:11:12.971544", "__class__": "BaseModel", "id": "af9b4cbd-2ce1-4e6e-8259-f578097dd15f", "created_at": "2017-09-28T21:11:12.971521"}, "User.38f22813-2753-4d42-b37c-57a17f1e4f88": {"password": "63a9f0ea7bb98050796b649e85481845", "created_at": "2017-09-28T21:11:42.848279", "email": "airbnb@mail.com", "id": "38f22813-2753-4d42-b37c-57a17f1e4f88", "last_name": "Bar", "updated_at": "2017-09-28T21:11:42.848291", "first_name": "Betty", "__class__": "User"}, "User.d0ef8146-4664-4de5-8e89-096d667b728e": {"password": "63a9f0ea7bb98050796b649e85481845", "created_at": "2017-09-28T21:11:42.848280", "email": "airbnb_2@mail.com", "id": "d0ef8146-4664-4de5-8e89-096d667b728e", "updated_at": "2017-09-28T21:11:42.848294", "first_name": "John", "__class__": "User"}, "BaseModel.9bf17966-b092-4996-bd33-26a5353cccb4": {"updated_at": "2017-09-28T21:11:14.963058", "__class__": "BaseModel", "id": "9bf17966-b092-4996-bd33-26a5353cccb4", "created_at": "2017-09-28T21:11:14.963049"}, "BaseModel.a42ee380-c959-450e-ad29-c840a898cfce": {"updated_at": "2017-09-28T21:11:15.504296", "__class__": "BaseModel", "id": "a42ee380-c959-450e-ad29-c840a898cfce", "created_at": "2017-09-28T21:11:15.504287"}, "BaseModel.38a22b25-ae9c-4fa9-9f94-59b3eb51bfba": {"updated_at": "2017-09-28T21:11:13.753347", "__class__": "BaseModel", "id": "38a22b25-ae9c-4fa9-9f94-59b3eb51bfba", "created_at": "2017-09-28T21:11:13.753337"}, "BaseModel.2bf3ebfd-a220-49ee-9ae6-b01c75f6f6a4": {"updated_at": "2017-09-28T21:11:14.333862", "__class__": "BaseModel", "id": "2bf3ebfd-a220-49ee-9ae6-b01c75f6f6a4", "created_at": "2017-09-28T21:11:14.333852"}, "User.246c227a-d5c1-403d-9bc7-6a47bb9f0f68": {"password": "root", "created_at": "2017-09-28T21:12:19.611352", "email": "airbnb@mail.com", "id": "246c227a-d5c1-403d-9bc7-6a47bb9f0f68", "last_name": "Bar", "updated_at": "2017-09-28T21:12:19.611363", "first_name": "Betty", "__class__": "User"}, "User.fce12f8a-fdb6-439a-afe8-2881754de71c": {"password": "root", "created_at": "2017-09-28T21:12:19.611354", "email": "airbnb_2@mail.com", "id": "fce12f8a-fdb6-439a-afe8-2881754de71c", "updated_at": "2017-09-28T21:12:19.611368", "first_name": "John", "__class__": "User"}}
+guillaume@ubuntu:~/AirBnB$ 
+
+```
+No unittests needed for the console
+ Task URLs  Github information Repo:
+* GitHub repository:  ` AirBnB_clone ` 
+* File:  ` models/user.py, models/engine/file_storage.py, console.py, tests/ ` 
+ Self-paced manual review  Panel footer - Controls 
+### 9. More classes!
+          mandatory         Progress vs Score  Task Body Write all those classes that inherit from   ` BaseModel `  :
+*  ` State `  ( ` models/state.py ` ):* Public class attributes:*  ` name ` : string - empty string
+
+
+*  ` City `  ( ` models/city.py ` ):* Public class attributes:*  ` state_id ` : string - empty string: it will be the  ` State.id ` 
+*  ` name ` : string - empty string
+
+
+*  ` Amenity `  ( ` models/amenity.py ` ):* Public class attributes:*  ` name ` : string - empty string
+
+
+*  ` Place `  ( ` models/place.py ` ):* Public class attributes:*  ` city_id ` : string - empty string: it will be the  ` City.id ` 
+*  ` user_id ` : string - empty string: it will be the  ` User.id ` 
+*  ` name ` : string - empty string
+*  ` description ` : string - empty string
+*  ` number_rooms ` : integer - 0
+*  ` number_bathrooms ` : integer - 0
+*  ` max_guest ` : integer - 0
+*  ` price_by_night ` : integer - 0
+*  ` latitude ` : float - 0.0
+*  ` longitude ` : float - 0.0
+*  ` amenity_ids ` : list of string - empty list: it will be the list of  ` Amenity.id `  later
+
+
+*  ` Review `  ( ` models/review.py ` ):* Public class attributes:*  ` place_id ` : string - empty string: it will be the  ` Place.id ` 
+*  ` user_id ` : string - empty string: it will be the  ` User.id ` 
+*  ` text ` : string - empty string
+
+
+ Task URLs  Github information Repo:
+* GitHub repository:  ` AirBnB_clone ` 
+* File:  ` models/state.py, models/city.py, models/amenity.py, models/place.py, models/review.py, tests/ ` 
+ Self-paced manual review  Panel footer - Controls 
+### 10. Console 1.0
+          mandatory         Progress vs Score  Task Body Update   ` FileStorage `   to manage correctly serialization and deserialization of all our new classes:   ` Place `  ,   ` State `  ,   ` City `  ,   ` Amenity `   and   ` Review ` 
+Update your command interpreter (  ` console.py `  ) to allow those actions:   ` show `  ,   ` create `  ,   ` destroy `  ,   ` update `   and   ` all `   with all classes created previously.
+Enjoy your first console!
+No unittests needed for the console
+ Task URLs  Github information Repo:
+* GitHub repository:  ` AirBnB_clone ` 
+* File:  ` console.py, models/engine/file_storage.py, tests/ ` 
+ Self-paced manual review  Panel footer - Controls 
+[Done with the mandatory tasks? Unlock 7 advanced tasks now!](https://intranet.hbtn.io/projects/263/unlock_optionals) 
+
+Ready for a  manual review×#### Recommended Sandbox
 [Running only]() 
-### 2 images(1/5 Sandboxes spawned)
-### Ubuntu 14.04
-Basic Ubuntu 14.04, with vim, emacs, curl and wget
-[Run]() 
+### 1 image(1/5 Sandboxes spawned)
 ### Ubuntu 20.04
 Basic Ubuntu 20.04, with vim, emacs, curl, wget and all needed for Holberton Foundations
 SSHSFTP[Webterm](https://intranet.hbtn.io/user_containers/17836/webterm) 

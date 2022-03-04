@@ -1,8 +1,19 @@
 #!/usr/bin/python3
+"""
+Module has:
+Imports from our archived base_model
+A class inherits BaseModel
+And a function init
+"""
 from models.base_model import BaseModel
 
 
 class Place(BaseModel):
+    """ Class:
+    The class name is Place and has a publics atributtes calls: city, user,
+    name, description, number rooms, number bathrooms and others.
+    this class has a function init with two parameters *args and **kwargs
+    """
     city_id = ""
     user_id = ""
     name = ""
@@ -16,4 +27,7 @@ class Place(BaseModel):
     amenity_ids = []
 
     def __init__(self, *args, **kwargs):
+        """ Funciont:
+        This function receives two parameters *args(arguments)
+        and **kwargs(number of arguments)"""
         super().__init__(*args, **kwargs)

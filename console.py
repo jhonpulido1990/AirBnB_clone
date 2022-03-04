@@ -3,9 +3,12 @@
 import cmd
 import json
 import shlex
+import models
 from models.base_model import BaseModel
+from models.user import User
 from models import storage
 
+dictt = {'BaseModel': BaseModel(), 'User': User()}
 
 class HBNBCommand(cmd.Cmd):
     prompt = '(hbnb) '
@@ -22,7 +25,6 @@ class HBNBCommand(cmd.Cmd):
         return True
 
     def do_all(self, line):
-        dictt = {'BaseModel': BaseModel()}
         if len(line) == 0:
             lista = []
             for key, value in storage.all().items():
@@ -43,8 +45,9 @@ class HBNBCommand(cmd.Cmd):
             return
 
     def do_create(self, line):
-        if line == "BaseModel":
-            Nline = BaseModel()
+        if line in dictt:
+            Nline = dictt[line]
+            #print(type(Nline))
             print(Nline.id)
             Nline.save()
 
@@ -59,9 +62,9 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
         else:
             line2 = line.split()
-            if line2[0] == "BaseModel" and len(line2) == 1:
+            if line2[0] in dictt and len(line2) == 1:
                 print("** instance id missing **")
-            elif line2[0] != "BaseModel":
+            elif line2[0] not in dictt:
                 print("** class doesn't exist **")
             else:
                 basem = "{}.{}".format(line2[0], line2[1])
@@ -75,9 +78,9 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
         else:
             line2 = line.split()
-            if line2[0] == "BaseModel" and len(line2) == 1:
+            if line2[0] in dictt and len(line2) == 1:
                 print("** instance id missing **")
-            elif line2[0] != "BaseModel":
+            elif line2[0] not in dictt:
                 print("** class doesn't exist **")
             else:
                 basem = "{}.{}".format(line2[0], line2[1])
@@ -91,21 +94,20 @@ class HBNBCommand(cmd.Cmd):
         if len(line) == 0:
             print("** class name missing **")
         else:
-            dictt = {'BaseModel': BaseModel()}
             ln = shlex.split(line)
-            if ln[0] != "BaseModel":
+            if ln[0] not in dictt:
                 print("** class doesn't exist **")
-            elif ln[0] == "BaseModel" and len(ln) == 1:
+            elif ln[0] in dictt and len(ln) == 1:
                 print("** instance id missing **")
-            elif ln[0] == "BaseModel" and len(ln) == 2:
+            elif ln[0] in dictt and len(ln) == 2:
                 basem = "{}.{}".format(ln[0], ln[1])
                 if basem in storage.all().keys():
                     print("** attribute name missing **")
                 else:
                     print("** no instance found **")
-            elif ln[0] == "BaseModel" and len(ln) == 3:
+            elif ln[0] in dictt and len(ln) == 3:
                 print("** value missing **")
-            elif ln[0] == "BaseModel" and len(ln) == 4:
+            elif ln[0] in dictt and len(ln) == 4:
                 basem = "{}.{}".format(ln[0], ln[1])
                 if basem in storage.all().keys():
                     ln2 = storage.all()[basem]

@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+'''
+module import: cmd, json, shlex, models,
+BaseModel, User, State, City, Amenity,
+Place, Review, Storage
+'''
 import cmd
 import json
 import shlex
@@ -12,12 +17,15 @@ from models.place import Place
 from models.review import Review
 from models import storage
 
-dictt = {'BaseModel': BaseModel(), 'User': User(), 'State': State(),
+DICTT = {'BaseModel': BaseModel(), 'User': User(), 'State': State(),
          'City': City(), 'Amenity': Amenity(), 'Place': Place(),
          'Review': Review()}
 
 
 class HBNBCommand(cmd.Cmd):
+    '''
+    functions that call methods
+    '''
     prompt = '(hbnb) '
 
     def emptyline(self):
@@ -40,7 +48,7 @@ class HBNBCommand(cmd.Cmd):
             return
 
         ln = line.split()
-        if ln[0] in dictt:
+        if ln[0] in DICTT:
             lista2 = []
             for key, value in storage.all().items():
                 if ln[0] == value.to_dict()["__class__"]:
@@ -52,8 +60,8 @@ class HBNBCommand(cmd.Cmd):
             return
 
     def do_create(self, line):
-        if line in dictt:
-            Nline = dictt[line]
+        if line in DICTT:
+            Nline = DICTT[line]
             print(Nline.id)
             Nline.save()
 
@@ -68,9 +76,9 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
         else:
             line2 = line.split()
-            if line2[0] in dictt and len(line2) == 1:
+            if line2[0] in DICTT and len(line2) == 1:
                 print("** instance id missing **")
-            elif line2[0] not in dictt:
+            elif line2[0] not in DICTT:
                 print("** class doesn't exist **")
             else:
                 basem = "{}.{}".format(line2[0], line2[1])
@@ -84,9 +92,9 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
         else:
             line2 = line.split()
-            if line2[0] in dictt and len(line2) == 1:
+            if line2[0] in DICTT and len(line2) == 1:
                 print("** instance id missing **")
-            elif line2[0] not in dictt:
+            elif line2[0] not in DICTT:
                 print("** class doesn't exist **")
             else:
                 basem = "{}.{}".format(line2[0], line2[1])
@@ -101,19 +109,19 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
         else:
             ln = shlex.split(line)
-            if ln[0] not in dictt:
+            if ln[0] not in DICTT:
                 print("** class doesn't exist **")
-            elif ln[0] in dictt and len(ln) == 1:
+            elif ln[0] in DICTT and len(ln) == 1:
                 print("** instance id missing **")
-            elif ln[0] in dictt and len(ln) == 2:
+            elif ln[0] in DICTT and len(ln) == 2:
                 basem = "{}.{}".format(ln[0], ln[1])
                 if basem in storage.all().keys():
                     print("** attribute name missing **")
                 else:
                     print("** no instance found **")
-            elif ln[0] in dictt and len(ln) == 3:
+            elif ln[0] in DICTT and len(ln) == 3:
                 print("** value missing **")
-            elif ln[0] in dictt and len(ln) == 4:
+            elif ln[0] in DICTT and len(ln) == 4:
                 basem = "{}.{}".format(ln[0], ln[1])
                 if basem in storage.all().keys():
                     ln2 = storage.all()[basem]

@@ -17,7 +17,7 @@ class User(BaseModel):
     """
     email = ""
     __doc__ += """
-        flight_speed (691)
+        email ("")
           The maximum speed that such a bird can attain.
     """
     password = ""

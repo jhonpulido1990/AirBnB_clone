@@ -17,7 +17,7 @@ import json
 class FileStorage:
     '''serializes instances to a
     JSON file and deserializes
-    JSON file to instances'''
+    JSON file totest_base_model.pyinstances'''
     __file_path = "file.json"
     __objects = {}
 

@@ -21,6 +21,7 @@ class TestBaseModel(unittest.TestCase):
         self.assertTrue(self.diccinary.created_at)
         self.assertNotEqual(self.basemodel.created_at, self.diccinary.updated_at)
         self.assertEqual(self.basemodel.firts_name, self.diccinary.firts_name)
+        self.assertEqual(type(self.basemodel.created_at), type(BaseModel().created_at))
 
     
 

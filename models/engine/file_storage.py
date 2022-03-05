@@ -40,7 +40,8 @@ class FileStorage:
             json.dump(dictiona, f)
 
     def reload(self):
-        '''deserializes the JSON file to __objects (only if the JSON file (__file_path) exists '''
+        '''deserializes the JSON file to __objects
+        (only if the JSON file (__file_path) exists) '''
         try:
             with open(self.__file_path, 'r') as f:
                 for key, value in (json.load(f)).items():

@@ -11,6 +11,7 @@ class TestUser(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
+        """intance"""
         cls.user = User()
         cls.user.first_name = 'William'
         cls.user.last_name = 'Cardozo'

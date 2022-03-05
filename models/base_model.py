@@ -8,14 +8,10 @@ import models
 
 
 class BaseModel:
-    '''
-    Create a file named models/base_model.py
-    '''
+    '''Create a file named models/base_model.py'''
 
     def __init__(self, *args, **kwargs):
-        '''
-        define of constructor
-        '''
+        '''define of constructor'''
 
         if kwargs and len(kwargs) != 0:
             del kwargs['__class__']
@@ -35,25 +31,19 @@ class BaseModel:
             pass
 
     def __str__(self):
-        '''
-        print date
-        '''
+        '''print date'''
 
         return "[{:s}] ({}) {}".format(self.__class__.__name__,
                                        self.id, self.__dict__)
 
     def save(self):
-        '''
-        method that save in storage
-        '''
+        '''method that save in storage'''
 
         self.updated_at = datetime.now()
         models.storage.save()
 
     def to_dict(self):
-        '''
-        method that create dictionary
-        '''
+        '''method that create dictionary'''
 
         dic = self.__dict__.copy()
         dic["__class__"] = self.__class__.__name__

@@ -1,15 +1,23 @@
 #!/usr/bin/python3
 """Imports modules testers"""
 
+from pyexpat import model
 import unittest
 import pep8
 import os
+import models
+from models.review import Review
 from models.base_model import BaseModel
 from models.engine.file_storage import FileStorage
 
 
 class TestReview(unittest.TestCase):
     """Testing"""
+
+    @classmethod
+    def setUpClass(cls):
+        """instance"""
+        cls.Reviewmodel = Review()
 
     def test_pep8(self):
         """Test of style"""
@@ -19,7 +27,7 @@ class TestReview(unittest.TestCase):
 
     def test_docstring(self):
         """Test of docstring"""
-        self.assertTrue(len(self.basemodel.__doc__) > 0)
+        self.assertTrue(len(self.Reviewmodel.__doc__) > 0)
 
 
 if __name__ == '__main__':

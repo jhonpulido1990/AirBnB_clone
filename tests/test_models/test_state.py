@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """Imports modules testers"""
 
-
 import unittest
 import pep8
 import os

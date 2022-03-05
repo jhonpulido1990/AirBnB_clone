@@ -13,6 +13,7 @@ class TestBaseModel(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
+        """instance"""
         cls.basemodel = BaseModel()
         cls.basemodel.firts_name = 'william'
         cls.basemodel.edad = '24'

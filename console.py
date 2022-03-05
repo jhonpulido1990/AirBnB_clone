@@ -40,6 +40,7 @@ class HBNBCommand(cmd.Cmd):
         return True
 
     def do_all(self, line):
+        'Prints all string representation of all instances\n'
         if len(line) == 0:
             lista = []
             for key, value in storage.all().items():
@@ -60,6 +61,7 @@ class HBNBCommand(cmd.Cmd):
             return
 
     def do_create(self, line):
+        'Creates a new instance of BaseModel\n'
         if line in DICTT:
             Nline = DICTT[line]
             print(Nline.id)
@@ -72,6 +74,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
 
     def do_show(self, line):
+        'Prints the string representation of an instance\n'
         if len(line) == 0:
             print("** class name missing **")
         else:
@@ -88,6 +91,7 @@ class HBNBCommand(cmd.Cmd):
                     print("** no instance found **")
 
     def do_destroy(self, line):
+        'Deletes an instance based on the class name and id\n'
         if len(line) == 0:
             print("** class name missing **")
         else:
@@ -105,6 +109,7 @@ class HBNBCommand(cmd.Cmd):
                     print("** no instance found **")
 
     def do_update(self, line):
+        'Updates an instance based on the class name and id\n'
         if len(line) == 0:
             print("** class name missing **")
         else:

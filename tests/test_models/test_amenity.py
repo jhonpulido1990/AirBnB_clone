@@ -4,7 +4,6 @@
 import unittest
 import pep8
 import os
-import models
 from models.engine.file_storage import FileStorage
 from models.user import User
 
@@ -26,6 +25,15 @@ class TestAmenity(unittest.TestCase):
     def test_docstring(self):
         """Test of docstring"""
         self.assertTrue(len(self.usermodel.__doc__) > 0)
+
+    def test_MethodExists(self):
+        """ Does MyMethod() exist?"""
+        result = self.usermodel.id
+        self.assert_(result is not None)
+
+    def test_ClassExists(self):
+        """ Does the class exist? """
+        self.assert_(self.usermodel is not None)
 
 
 if __name__ == '__main__':

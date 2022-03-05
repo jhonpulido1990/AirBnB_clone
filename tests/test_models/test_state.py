@@ -27,6 +27,15 @@ class TestState(unittest.TestCase):
         """Test of docstring"""
         self.assertTrue(len(self.statemodel.__doc__) > 0)
 
+    def test_MethodExists(self):
+        """ Does MyMethod() exist?"""
+        result = self.statemodel.id
+        self.assert_(result is not None)
+
+    def test_ClassExists(self):
+        """ Does the class exist? """
+        self.assert_(self.statemodel is not None)
+
 
 if __name__ == '__main__':
     unittest.main()

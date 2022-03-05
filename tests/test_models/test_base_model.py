@@ -1,15 +1,15 @@
 #!/usr/bin/python3
-'''impot module test'''
-import unittest
-from models.base_model import BaseModel
 
+import unittest
+import pep8
+import os
+from models.base_model import BaseModel
+from models.engine.file_storage import FileStorage
 
 class TestBaseModel(unittest.TestCase):
-    '''method by test'''
+
     @classmethod
     def setUpClass(cls):
-        '''funtion by instance'''
-
         cls.basemodel = BaseModel()
         cls.basemodel.firts_name = 'william'
         cls.basemodel.edad = '24'
@@ -17,18 +17,19 @@ class TestBaseModel(unittest.TestCase):
         cls.diccinary = BaseModel(**cls.basemodeldict)
 
     def test_BaseModel(self):
-        '''test'''
-
         self.assertEqual(self.basemodel.firts_name, 'william')
         self.assertTrue(self.basemodel.id)
         self.assertTrue(self.diccinary.created_at)
-        self.assertNotEqual(self.basemodel.created_at,
-                            self.diccinary.updated_at)
-        self.assertEqual(self.basemodel.firts_name,
-                         self.diccinary.firts_name)
-        self.assertEqual(type(self.basemodel.created_at),
-                         type(BaseModel().created_at))
+        self.assertNotEqual(self.basemodel.created_at, self.diccinary.updated_at)
+        self.assertEqual(self.basemodel.firts_name, self.diccinary.firts_name)
 
+    def test_pep8(self):
+        st = pep8.StyleGuide(quiet=True)
+        stx = st.check_files(['models/base_model.py'])
+        self.assertEqual(stx.total_errors, 0, "check pep8")
+
+    def test_docstring(self):
+        self.assertTrue(len(self.basemodel.__doc__) > 0)
 
 if __name__ == '__main__':
     unittest.main()

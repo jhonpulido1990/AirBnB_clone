@@ -11,6 +11,9 @@ class State(BaseModel):
     """ Class:
     The class name is State and has a public atributte call "name"
     this class has a function init with two parameters *args and **kwargs
+    
+    Args:
+        name (Str): The name of the state.
     """
     name = ""
 

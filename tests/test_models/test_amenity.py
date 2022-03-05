@@ -27,6 +27,10 @@ class TestAmenity(unittest.TestCase):
         """Test of docstring"""
         self.assertTrue(len(self.usermodel.__doc__) > 0)
 
+    def test_ClassExists(self):
+        """ Does the class exist? """
+        self.assert_(self.usermodel is not None)
+
 
 if __name__ == '__main__':
     unittest.main()

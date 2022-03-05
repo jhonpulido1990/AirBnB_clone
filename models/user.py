@@ -14,12 +14,11 @@ class User(BaseModel):
     The class name is User and has a publics atributtes calls email, password,
     first name and last name,this class has a function init with two
     parameters *args and **kwargs
+    Attributes:
+        email     The maximum speed that such a bird can attain.
+        password  The locale where these birds congregate to reproduce.
     """
     email = ""
-    __doc__ += """
-        email ("")
-          The maximum speed that such a bird can attain.
-    """
     password = ""
     first_name = ""
     last_name = ""

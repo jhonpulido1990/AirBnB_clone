@@ -16,7 +16,6 @@ class TestCity(unittest.TestCase):
     def setUpClass(cls):
         cls.citymodel = City()
 
-
     def test_pep8(self):
         """Test of style"""
         st = pep8.StyleGuide(quiet=True)

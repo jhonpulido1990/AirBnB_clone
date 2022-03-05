@@ -1,9 +1,6 @@
 #!/usr/bin/python3
-"""put in place a parent class
-(called BaseModel) to take care
-of the initialization, serialization
-and deserialization of
-your future instances"""
+"""serialization and deserialization of your future instances"""
+
 
 from datetime import datetime
 import uuid
@@ -14,10 +11,12 @@ class BaseModel:
     '''
     Create a file named models/base_model.py
     '''
+
     def __init__(self, *args, **kwargs):
         '''
         define of constructor
         '''
+
         if kwargs and len(kwargs) != 0:
             del kwargs['__class__']
             for key, value in kwargs.items():
@@ -39,6 +38,7 @@ class BaseModel:
         '''
         print date
         '''
+
         return "[{:s}] ({}) {}".format(self.__class__.__name__,
                                        self.id, self.__dict__)
 
@@ -46,6 +46,7 @@ class BaseModel:
         '''
         method that save in storage
         '''
+
         self.updated_at = datetime.now()
         models.storage.save()
 
@@ -53,6 +54,7 @@ class BaseModel:
         '''
         method that create dictionary
         '''
+
         dic = self.__dict__.copy()
         dic["__class__"] = self.__class__.__name__
         dic.update({'created_at': self.created_at.isoformat(),

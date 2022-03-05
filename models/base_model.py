@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-'''put in place a parent class
+"""put in place a parent class
 (called BaseModel) to take care
 of the initialization, serialization
 and deserialization of
-your future instances'''
+your future instances"""
 
 from datetime import datetime
 import uuid

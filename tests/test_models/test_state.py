@@ -1,9 +1,11 @@
 #!/usr/bin/python3
 """Imports modules testers"""
 
+
 import unittest
 import pep8
 import os
+from models.state import State
 from models.base_model import BaseModel
 from models.engine.file_storage import FileStorage
 
@@ -11,6 +13,10 @@ from models.engine.file_storage import FileStorage
 class TestState(unittest.TestCase):
     """Testing"""
 
+    @classmethod
+    def setUpClass(cls):
+        """instance"""
+        cls.statemodel = State()
 
     def test_pep8(self):
         """Test of style"""
@@ -20,7 +26,7 @@ class TestState(unittest.TestCase):
 
     def test_docstring(self):
         """Test of docstring"""
-        self.assertTrue(len(self.basemodel.__doc__) > 0)
+        self.assertTrue(len(self.statemodel.__doc__) > 0)
 
 
 if __name__ == '__main__':

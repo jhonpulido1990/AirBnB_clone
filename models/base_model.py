@@ -47,6 +47,6 @@ class BaseModel:
 
         dic = self.__dict__.copy()
         dic["__class__"] = self.__class__.__name__
-        dic.update({'created_at': self.created_at.isoformat(),
-                    'updated_at': self.updated_at.isoformat()})
+        dic.update({'created_at': self.created_at.isoformat("T", "microsecond"),
+                    'updated_at': self.updated_at.isoformat("T", "microsecond")})
         return dic

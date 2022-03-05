@@ -1,14 +1,10 @@
 #!/usr/bin/python3
-"""
-Module has:
+"""Module has:
 Imports from our archived base_model
 A class inherits BaseModel
-And a function init
-"""
+And a function init"""
 from models.base_model import BaseModel
-"""
-este modulo de importacion
-"""
+
 
 class State(BaseModel):
     """ Class:

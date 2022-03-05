@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """Imports modules testers"""
 
-from pyexpat import model
 import unittest
 import pep8
 import os

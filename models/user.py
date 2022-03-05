@@ -17,6 +17,8 @@ class User(BaseModel):
     Attributes:
         email     The maximum speed that such a bird can attain.
         password  The locale where these birds congregate to reproduce.
+        first_name     The maximum speed that such a bird can attain.
+        last_name  The locale where these birds congregate to reproduce.
     """
     email = ""
     password = ""

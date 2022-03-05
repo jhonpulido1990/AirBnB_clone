@@ -2,6 +2,7 @@
 """Module has: Imports from our archived base_model
 A class inherits BaseModel And a function init"""
 
+
 from models.base_model import BaseModel
 
 
@@ -16,4 +17,5 @@ class City(BaseModel):
     def __init__(self, *args, **kwargs):
         """Funciont: This function receives two parameters *args(arguments)
         and **kwargs(number of arguments)"""
+
         super().__init__(*args, **kwargs)

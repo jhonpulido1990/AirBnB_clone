@@ -14,11 +14,11 @@ class User(BaseModel):
     The class name is User and has a publics atributtes calls email, password,
     first name and last name,this class has a function init with two
     parameters *args and **kwargs
-        Args:
-            email (str): The email of the user.
-            password (str): The password of the user.
-            firstname (str): The first name of the user.
-            last_name (str): The last name of the user.
+    Args:
+        email (str): The email of the user.
+        password (str): The password of the user.
+        firstname (str): The first name of the user.
+        last_name (str): The last name of the user.
     """
     email = ""
     password = ""

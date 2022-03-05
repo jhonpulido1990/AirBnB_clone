@@ -35,5 +35,6 @@ class TestUser(unittest.TestCase):
         """Test of docstring"""
         self.assertTrue(len(self.user.__doc__) > 0)
 
+
 if __name__ == '__main__':
     unittest.main()

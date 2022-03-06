@@ -39,6 +39,13 @@ class TestFileStorage(unittest.TestCase):
         self.assertTrue(hasattr(self.usuario, 'save'))
         self.assertNotEqual(self.usuario.created_at, self.usuario.updated_at)
 
+    def test_file_storage_exist(self):
+        """ Checks if methods exists """
+        self.assertTrue(hasattr(self.storage, "all"))
+        self.assertTrue(hasattr(self.storage, "new"))
+        self.assertTrue(hasattr(self.storage, "save"))
+        self.assertTrue(hasattr(self.storage, "reload"))
+
 
 if __name__ == '__main__':
     unittest.main()

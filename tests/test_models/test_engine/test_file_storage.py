@@ -13,6 +13,15 @@ from models import storage
 class TestFileStorage(unittest.TestCase):
     """Testing"""
 
+    @classmethod
+    def setUpClass(cls):
+        """instance"""
+        cls.filestorage = FileStorage()
+        cls.filestorage.firts_name = 'william'
+        cls.filestorage.edad = '24'
+        cls.filestoragedict = cls.filestorage.to_dict()
+        cls.diccinary = FileStorage(**cls.filestoragedict)
+
     def test_pycodestyle(self):
         """Test of pycodestyle"""
         st = pycodestyle.StyleGuide(quiet=True)
@@ -23,3 +32,7 @@ class TestFileStorage(unittest.TestCase):
     def test_Documentation(self):
         """Test of documentation"""
         self.assertTrue(len(models.engine.file_storage.__doc__) > 0)
+
+
+if __name__ == '__main__':
+    unittest.main()

@@ -29,7 +29,3 @@ class TestBaseModel(unittest.TestCase):
         """ Does MyMethod() exist?"""
         result = self.basemodel.id
         self.assert_(result is not None)
-
-    def test_ClassExists(self):
-        """ Does the class exist? """
-        self.assert_(self.basemodel is not None)

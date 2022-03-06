@@ -1,12 +1,8 @@
 #!/usr/bin/python3
 """Imports modules testers"""
-
 import unittest
 import pep8
-import os
 from models.state import State
-from models.base_model import BaseModel
-from models.engine.file_storage import FileStorage
 
 
 class TestState(unittest.TestCase):

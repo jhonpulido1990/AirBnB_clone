@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Imports modules testers"""
+from datetime import datetime
 import unittest
 from models.base_model import BaseModel
 
@@ -12,7 +13,7 @@ class TestBaseModel(unittest.TestCase):
         """instance"""
         cls.basemodel = BaseModel()
         cls.basemodel.firts_name = 'william'
-        cls.basemodel.edad = '24'
+        cls.basemodel.edad = 24
         cls.basemodeldict = cls.basemodel.to_dict()
         cls.diccinary = BaseModel(**cls.basemodeldict)
 
@@ -29,3 +30,15 @@ class TestBaseModel(unittest.TestCase):
         """ Does MyMethod() exist?"""
         result = self.basemodel.id
         self.assert_(result is not None)
+
+    def test_class(self):
+        """value the id"""
+        self.assertIsInstance(self.basemodel, BaseModel)
+
+    def test_data(self):
+        """type de data"""
+        self.assertIsInstance(self.basemodeldict, dict)
+        self.assertIsInstance(self.basemodel.id, str)
+        self.assertIsInstance(self.basemodel.created_at, datetime)
+        self.assertIsInstance(self.basemodel.__str__(), str)
+        self.assertIsInstance(self.basemodel.edad, int)

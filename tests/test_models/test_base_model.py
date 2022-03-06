@@ -42,3 +42,13 @@ class TestBaseModel(unittest.TestCase):
         self.assertIsInstance(self.basemodel.created_at, datetime)
         self.assertIsInstance(self.basemodel.__str__(), str)
         self.assertIsInstance(self.basemodel.edad, int)
+    
+    def test_save(self):
+        """ saved to file. """
+        self.basemodel.save()
+        with open("file.json", 'r') as f:
+            self.assertIn(self.basemodel.id, f.read())
+
+    def test_Kwarg(self):
+        """validation the Kwarg"""
+        self.assertNotEqual(self.basemodel, self.basemodeldict)

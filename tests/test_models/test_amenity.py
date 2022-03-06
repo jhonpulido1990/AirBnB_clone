@@ -1,11 +1,8 @@
 #!/usr/bin/python3
 """Imports modules testers"""
-
 import unittest
 import pep8
-import os
-from models.engine.file_storage import FileStorage
-from models.user import User
+from models.amenity import Amenity
 
 
 class TestAmenity(unittest.TestCase):
@@ -14,7 +11,8 @@ class TestAmenity(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         """intancia"""
-        cls.usermodel = User()
+        cls.amenitymodel = Amenity()
+        cls.amenitymodel.name = "jhon"
 
     def test_pep8(self):
         """Test of style"""
@@ -24,17 +22,17 @@ class TestAmenity(unittest.TestCase):
 
     def test_docstring(self):
         """Test of docstring"""
-        self.assertTrue(len(self.usermodel.__doc__) > 0)
+        self.assertTrue(len(self.amenitymodel.__doc__) > 0)
 
     def test_MethodExists(self):
         """ Does MyMethod() exist?"""
-        result = self.usermodel.id
+        result = self.amenitymodel.id
         self.assert_(result is not None)
 
     def test_ClassExists(self):
         """ Does the class exist? """
-        self.assert_(self.usermodel is not None)
+        self.assert_(self.amenitymodel is not None)
 
-
-if __name__ == '__main__':
-    unittest.main()
+    def test_atribute(self):
+        """validation name"""
+        self.assertNotEqual(self.amenitymodel.name, "william")

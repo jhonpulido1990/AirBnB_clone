@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """Imports modules testers"""
-
 import unittest
 import pep8
 import os
@@ -47,7 +46,3 @@ class TestBaseModel(unittest.TestCase):
     def test_ClassExists(self):
         """ Does the class exist? """
         self.assert_(self.basemodel is not None)
-
-
-if __name__ == '__main__':
-    unittest.main()

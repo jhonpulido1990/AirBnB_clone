@@ -1,12 +1,8 @@
 #!/usr/bin/python3
 """Imports modules testers"""
-
 import unittest
 import pep8
-import os
 from models.state import State
-from models.base_model import BaseModel
-from models.engine.file_storage import FileStorage
 
 
 class TestState(unittest.TestCase):
@@ -16,6 +12,7 @@ class TestState(unittest.TestCase):
     def setUpClass(cls):
         """instance"""
         cls.statemodel = State()
+        cls.statemodel.name = "william"
 
     def test_pep8(self):
         """Test of style"""
@@ -36,6 +33,6 @@ class TestState(unittest.TestCase):
         """ Does the class exist? """
         self.assert_(self.statemodel is not None)
 
-
-if __name__ == '__main__':
-    unittest.main()
+    def test_atribute(self):
+        """validation name"""
+        self.assertEqual(self.statemodel.name, "william")

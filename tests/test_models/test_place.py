@@ -1,11 +1,7 @@
 #!/usr/bin/python3
 """Imports modules testers"""
-
 import unittest
 import pep8
-import os
-from models.base_model import BaseModel
-from models.engine.file_storage import FileStorage
 from models.place import Place
 
 
@@ -16,6 +12,7 @@ class TestPlace(unittest.TestCase):
     def setUpClass(cls):
         """instance"""
         cls.placemodel = Place()
+        cls.placemodel.number_rooms = 1
 
     def test_pep8(self):
         """Test of style"""
@@ -36,6 +33,6 @@ class TestPlace(unittest.TestCase):
         """ Does the class exist? """
         self.assert_(self.placemodel is not None)
 
-
-if __name__ == '__main__':
-    unittest.main()
+    def test_atribute(self):
+        """validation number"""
+        self.assertIsInstance(self.placemodel.number_bathrooms, int)

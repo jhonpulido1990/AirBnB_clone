@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 """serialization and deserialization of your future instances"""
-
-
 from datetime import datetime
 import uuid
 import models
@@ -12,7 +10,6 @@ class BaseModel:
 
     def __init__(self, *args, **kwargs):
         '''define of constructor'''
-
         if kwargs and len(kwargs) != 0:
             del kwargs['__class__']
             for key, value in kwargs.items():
@@ -32,19 +29,16 @@ class BaseModel:
 
     def __str__(self):
         '''print date'''
-
         return "[{:s}] ({}) {}".format(self.__class__.__name__,
                                        self.id, self.__dict__)
 
     def save(self):
         '''method that save in storage'''
-
         self.updated_at = datetime.now()
         models.storage.save()
 
     def to_dict(self):
         '''method that create dictionary'''
-
         dic = self.__dict__.copy()
         dic["__class__"] = self.__class__.__name__
         dic['created_at'] = self.created_at.isoformat("T", "microseconds")

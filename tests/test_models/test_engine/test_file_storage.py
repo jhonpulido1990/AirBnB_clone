@@ -46,6 +46,17 @@ class TestFileStorage(unittest.TestCase):
         self.assertTrue(hasattr(self.storage, "save"))
         self.assertTrue(hasattr(self.storage, "reload"))
 
+    def test_all(self):
+        """Test method All"""
+        dictiona = self.storage.all()
+        self.assertIsInstance(dictiona, dict)
+
+    def test_new(self):
+        """test method new"""
+        s_dict = self.storage.all()
+        kk = "{}.{}".format(type(self.usuario).__name__, self.usuario.id)
+        self.assertTrue(kk in s_dict.keys())
+
 
 if __name__ == '__main__':
     unittest.main()

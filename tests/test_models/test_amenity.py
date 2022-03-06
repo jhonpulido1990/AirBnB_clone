@@ -15,6 +15,7 @@ class TestAmenity(unittest.TestCase):
     def setUpClass(cls):
         """intancia"""
         cls.amenitymodel = Amenity()
+        cls.amenitymodel.name = "jhon"
 
     def test_pep8(self):
         """Test of style"""
@@ -34,6 +35,10 @@ class TestAmenity(unittest.TestCase):
     def test_ClassExists(self):
         """ Does the class exist? """
         self.assert_(self.amenitymodel is not None)
+
+    def test_atribute(self):
+        """validation name"""
+        self.assertNotEqual(self.amenitymodel.name, "william")
 
 
 if __name__ == '__main__':

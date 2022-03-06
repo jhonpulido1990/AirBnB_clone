@@ -14,7 +14,9 @@ class TestCity(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
+        """starting"""
         cls.citymodel = City()
+        cls.citymodel.name = "william"
 
     def test_pep8(self):
         """Test of style"""
@@ -34,6 +36,10 @@ class TestCity(unittest.TestCase):
     def test_ClassExists(self):
         """ Does the class exist? """
         self.assert_(self.citymodel is not None)
+
+    def test_atributename(self):
+        """validation name"""
+        self.assertEqual(self.citymodel.name, "william")
 
 
 if __name__ == '__main__':

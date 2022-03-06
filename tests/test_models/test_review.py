@@ -17,6 +17,7 @@ class TestReview(unittest.TestCase):
     def setUpClass(cls):
         """instance"""
         cls.Reviewmodel = Review()
+        cls.Reviewmodel.place_id = "cartagena"
 
     def test_pep8(self):
         """Test of style"""
@@ -36,6 +37,10 @@ class TestReview(unittest.TestCase):
     def test_ClassExists(self):
         """ Does the class exist? """
         self.assert_(self.Reviewmodel is not None)
+
+    def test_atribute(self):
+        """validation place"""
+        self.assertEqual(self.Reviewmodel.place_id, "cartagena")
 
 
 if __name__ == '__main__':

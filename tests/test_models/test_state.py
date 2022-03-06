@@ -16,6 +16,7 @@ class TestState(unittest.TestCase):
     def setUpClass(cls):
         """instance"""
         cls.statemodel = State()
+        cls.statemodel.name = "william"
 
     def test_pep8(self):
         """Test of style"""
@@ -35,6 +36,10 @@ class TestState(unittest.TestCase):
     def test_ClassExists(self):
         """ Does the class exist? """
         self.assert_(self.statemodel is not None)
+
+    def test_atribute(self):
+        """validation name"""
+        self.assertEqual(self.statemodel.name, "william")
 
 
 if __name__ == '__main__':

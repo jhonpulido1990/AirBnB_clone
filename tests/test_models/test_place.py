@@ -16,6 +16,7 @@ class TestPlace(unittest.TestCase):
     def setUpClass(cls):
         """instance"""
         cls.placemodel = Place()
+        cls.placemodel.number_rooms = 1
 
     def test_pep8(self):
         """Test of style"""
@@ -35,6 +36,10 @@ class TestPlace(unittest.TestCase):
     def test_ClassExists(self):
         """ Does the class exist? """
         self.assert_(self.placemodel is not None)
+
+    def  test_atribute(self):
+        """validation number"""
+        self.assertIsInstance(self.placemodel.number_bathrooms, int)
 
 
 if __name__ == '__main__':

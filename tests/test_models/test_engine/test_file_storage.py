@@ -28,7 +28,7 @@ class TestFileStorage(unittest.TestCase):
         r = st.check_files(['models/engine/file_storage.py'])
         self.assertEqual(r.total_errors, 0,
                          "Found code style errors (and warnings).")
-    
+
     def test_User_saveStorage(self):
         """ Checks if the save function works """
         self.usuario.first_name = "betty"

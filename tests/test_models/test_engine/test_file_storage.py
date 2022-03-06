@@ -11,16 +11,14 @@ from models import storage
 class TestFileStorage(unittest.TestCase):
     """Testing"""
 
-    @classmethod
-    def setUpClass(cls):
-        """instance"""
-        cls.filestorage = FileStorage()
-        cls.filestorage.firts_name = 'william'
-        cls.filestorage.edad = '24'
+    def setUp(self):
+        self.storage = FileStorage()
 
-    def test_BaseModel(self):
-        """Test of comprobation"""
-        self.assertEqual(self.filestorage.firts_name, 'william')
+    def test_creation(self):
+        '''
+            this test validate that creation proccess was correct.
+        '''
+        self.assertEqual(self.storage.save(), None)
 
     def test_pep8(self):
         """Test of pep8"""
@@ -28,7 +26,3 @@ class TestFileStorage(unittest.TestCase):
         r = st.check_files(['models/engine/file_storage.py'])
         self.assertEqual(r.total_errors, 0,
                          "Found code style errors (and warnings).")
-
-    def test_Documentation(self):
-        """Test of documentation"""
-        self.assertTrue(len(self.filestorage.__doc__) > 0)

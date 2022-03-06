@@ -52,3 +52,7 @@ class TestBaseModel(unittest.TestCase):
     def test_Kwarg(self):
         """validation the Kwarg"""
         self.assertNotEqual(self.basemodel, self.basemodeldict)
+
+
+if __name__ == '__main__':
+    unittest.main()

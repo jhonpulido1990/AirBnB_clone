@@ -37,7 +37,7 @@ class TestPlace(unittest.TestCase):
         """ Does the class exist? """
         self.assert_(self.placemodel is not None)
 
-    def  test_atribute(self):
+    def test_atribute(self):
         """validation number"""
         self.assertIsInstance(self.placemodel.number_bathrooms, int)
 

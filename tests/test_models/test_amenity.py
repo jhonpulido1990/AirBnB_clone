@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Imports modules testers"""
+from datetime import datetime
 import unittest
 import pep8
 from models.amenity import Amenity
@@ -13,6 +14,8 @@ class TestAmenity(unittest.TestCase):
         """intancia"""
         cls.amenitymodel = Amenity()
         cls.amenitymodel.name = "jhon"
+        cls.amenitidict = cls.amenitymodel.to_dict()
+        cls.diccinary = Amenity(**cls.amenitidict)
 
     def test_pep8(self):
         """Test of style"""
@@ -24,15 +27,37 @@ class TestAmenity(unittest.TestCase):
         """Test of docstring"""
         self.assertTrue(len(self.amenitymodel.__doc__) > 0)
 
-    def test_MethodExists(self):
-        """ Does MyMethod() exist?"""
-        result = self.amenitymodel.id
-        self.assert_(result is not None)
-
-    def test_ClassExists(self):
-        """ Does the class exist? """
-        self.assert_(self.amenitymodel is not None)
-
     def test_atribute(self):
         """validation name"""
         self.assertNotEqual(self.amenitymodel.name, "william")
+
+    def test_amenity(self):
+        """Test of comprobation"""
+        self.assertEqual(self.amenitymodel.name, 'jhon')
+        self.assertTrue(self.amenitymodel.id)
+        self.assertTrue(self.amenitymodel.created_at)
+        self.assertNotEqual(self.amenitymodel.created_at,
+                            self.amenitymodel.updated_at)
+        self.assertEqual(self.amenitymodel.name, self.amenitidict["name"])
+
+    def test_data(self):
+        """type de data"""
+        self.assertIsInstance(self.amenitidict, dict)
+        self.assertIsInstance(self.amenitymodel.id, str)
+        self.assertIsInstance(self.amenitymodel.created_at, datetime)
+        self.assertIsInstance(self.amenitymodel.__str__(), str)
+        self.assertIsInstance(self.amenitymodel.name, str)
+
+    def test_save(self):
+        """ saved to file. """
+        self.amenitymodel.save()
+        with open("file.json", 'r') as f:
+            self.assertIn(self.amenitymodel.id, f.read())
+
+    def test_Kwarg(self):
+        """validation the Kwarg"""
+        self.assertNotEqual(self.amenitymodel, self.amenitidict)
+
+
+if __name__ == '__main__':
+    unittest.main()

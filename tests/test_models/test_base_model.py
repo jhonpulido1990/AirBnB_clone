@@ -24,7 +24,8 @@ class TestBaseModel(unittest.TestCase):
         self.assertTrue(self.diccinary.created_at)
         self.assertNotEqual(self.basemodel.created_at,
                             self.diccinary.updated_at)
-        self.assertEqual(self.basemodel.firts_name, self.diccinary.firts_name)
+        self.assertEqual(self.basemodel.firts_name,
+                         self.diccinary.firts_name)
 
     def test_MethodExists(self):
         """ Does MyMethod() exist?"""
@@ -42,7 +43,7 @@ class TestBaseModel(unittest.TestCase):
         self.assertIsInstance(self.basemodel.created_at, datetime)
         self.assertIsInstance(self.basemodel.__str__(), str)
         self.assertIsInstance(self.basemodel.edad, int)
-    
+
     def test_save(self):
         """ saved to file. """
         self.basemodel.save()

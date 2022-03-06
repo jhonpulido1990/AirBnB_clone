@@ -3,8 +3,6 @@
 
 import unittest
 import pep8
-import os
-from models.engine.file_storage import FileStorage
 from models.amenity import Amenity
 
 

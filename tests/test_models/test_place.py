@@ -40,7 +40,3 @@ class TestPlace(unittest.TestCase):
     def test_atribute(self):
         """validation number"""
         self.assertIsInstance(self.placemodel.number_bathrooms, int)
-
-
-if __name__ == '__main__':
-    unittest.main()

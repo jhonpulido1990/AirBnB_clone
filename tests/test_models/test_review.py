@@ -41,7 +41,3 @@ class TestReview(unittest.TestCase):
     def test_atribute(self):
         """validation place"""
         self.assertEqual(self.Reviewmodel.place_id, "cartagena")
-
-
-if __name__ == '__main__':
-    unittest.main()

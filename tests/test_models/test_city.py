@@ -40,7 +40,3 @@ class TestCity(unittest.TestCase):
     def test_atributename(self):
         """validation name"""
         self.assertEqual(self.citymodel.name, "william")
-
-
-if __name__ == '__main__':
-    unittest.main()

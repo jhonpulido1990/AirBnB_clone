@@ -39,7 +39,3 @@ class TestAmenity(unittest.TestCase):
     def test_atribute(self):
         """validation name"""
         self.assertNotEqual(self.amenitymodel.name, "william")
-
-
-if __name__ == '__main__':
-    unittest.main()

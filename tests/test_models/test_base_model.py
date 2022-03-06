@@ -34,10 +34,6 @@ class TestBaseModel(unittest.TestCase):
         stx = st.check_files(['models/base_model.py'])
         self.assertEqual(stx.total_errors, 0, "check pep8")
 
-    def test_docstring(self):
-        """Test of docstring"""
-        self.assertTrue(len(self.basemodel.__doc__) > 0)
-
     def test_MethodExists(self):
         """ Does MyMethod() exist?"""
         result = self.basemodel.id

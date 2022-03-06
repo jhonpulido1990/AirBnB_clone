@@ -32,12 +32,3 @@ class TestFileStorage(unittest.TestCase):
     def test_Documentation(self):
         """Test of documentation"""
         self.assertTrue(len(self.filestorage.__doc__) > 0)
-
-    def setUp(self):
-        self.storage = FileStorage()
-
-    def test_creation(self):
-        '''
-            this test validate that creation proccess was correct.
-        '''
-        self.assertEqual(self.storage.save(), None)

@@ -33,7 +33,7 @@ class TestCity(unittest.TestCase):
         self.assertEqual(self.citymodel.name, "william")
         self.assertEqual(self.citymodel.state_id, "fb15sv1v11fb11vv11v")
 
-    def test_amenity(self):
+    def test_city(self):
         """Test of comprobation"""
         self.assertEqual(self.citymodel.name, 'william')
         self.assertTrue(self.citymodel.id)

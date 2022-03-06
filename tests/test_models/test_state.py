@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Imports modules testers"""
 import unittest
+from datetime import datetime
 import pep8
 from models.state import State
 
@@ -13,6 +14,8 @@ class TestState(unittest.TestCase):
         """instance"""
         cls.statemodel = State()
         cls.statemodel.name = "william"
+        cls.statemodeldict = cls.statemodel.to_dict()
+        cls.diccinary = State(**cls.statemodeldict)
 
     def test_pep8(self):
         """Test of style"""
@@ -24,15 +27,37 @@ class TestState(unittest.TestCase):
         """Test of docstring"""
         self.assertTrue(len(self.statemodel.__doc__) > 0)
 
-    def test_MethodExists(self):
-        """ Does MyMethod() exist?"""
-        result = self.statemodel.id
-        self.assert_(result is not None)
-
-    def test_ClassExists(self):
-        """ Does the class exist? """
-        self.assert_(self.statemodel is not None)
-
-    def test_atribute(self):
+    def test_atributename(self):
         """validation name"""
         self.assertEqual(self.statemodel.name, "william")
+
+    def test_city(self):
+        """Test of comprobation"""
+        self.assertEqual(self.statemodel.name, 'william')
+        self.assertTrue(self.statemodel.id)
+        self.assertTrue(self.statemodel.created_at)
+        self.assertNotEqual(self.statemodel.created_at,
+                            self.statemodel.updated_at)
+        self.assertEqual(self.statemodel.name, self.statemodeldict["name"])
+
+    def test_data(self):
+        """type de data"""
+        self.assertIsInstance(self.statemodeldict, dict)
+        self.assertIsInstance(self.statemodel.id, str)
+        self.assertIsInstance(self.statemodel.created_at, datetime)
+        self.assertIsInstance(self.statemodel.__str__(), str)
+        self.assertIsInstance(self.statemodel.name, str)
+
+    def test_save(self):
+        """ saved to file. """
+        self.statemodel.save()
+        with open("file.json", 'r') as f:
+            self.assertIn(self.statemodel.id, f.read())
+
+    def test_Kwarg(self):
+        """validation the Kwarg"""
+        self.assertNotEqual(self.statemodel, self.statemodeldict)
+
+
+if __name__ == '__main__':
+    unittest.main()

@@ -14,7 +14,7 @@ class TestPlace(unittest.TestCase):
         """instance"""
         cls.placemodel = Place()
         cls.placemodel.number_rooms = 1
-        cls.placemodel.city_id = 'cali'
+        cls.placemodel.city_id = 'Cali'
         cls.placemodel.user_id = '1516dgb1d'
         cls.placemodel.name = 'william'
         cls.placemodel.description = 'sensey'
@@ -37,7 +37,7 @@ class TestPlace(unittest.TestCase):
         """Test of docstring"""
         self.assertTrue(len(self.placemodel.__doc__) > 0)
 
-    def test_atribute(self):
+    def test_Data(self):
         """validation number"""
         self.assertIsInstance(self.placemodel.number_bathrooms, int)
         self.assertIsInstance(self.placemodel.city_id, str)
@@ -54,6 +54,36 @@ class TestPlace(unittest.TestCase):
         self.assertIsInstance(self.placedict, dict)
         self.assertIsInstance(self.placemodel.id, str)
         self.assertIsInstance(self.placemodel.__str__(), str)
+
+    def test_atributename(self):
+        """validation name"""
+        self.assertEqual(self.placemodel.city_id, "Cali")
+        self.assertEqual(self.placemodel.name, "william")
+        self.assertEqual(self.placemodel.description, "sensey")
+        self.assertNotEqual(self.placemodel.user_id, "fb15sv1v11fb11vv11v")
+        self.assertEqual(self.placemodel.number_bathrooms, 2)
+        self.assertNotEqual(self.placemodel.amenity_ids, [])
+        self.assertNotEqual(self.placemodel.price_by_night, 4)
+        self.assertNotEqual(self.placemodel.number_rooms, 2)
+
+    def test_place(self):
+        """Test of comprobation"""
+        self.assertEqual(self.placemodel.name, 'william')
+        self.assertTrue(self.placemodel.id)
+        self.assertTrue(self.placemodel.created_at)
+        self.assertNotEqual(self.placemodel.created_at,
+                            self.placemodel.updated_at)
+        self.assertEqual(self.placemodel.name, self.placedict["name"])
+
+    def test_save(self):
+        """ saved to file."""
+        self.placemodel.save()
+        with open("file.json", 'r') as f:
+            self.assertIn(self.placemodel.id, f.read())
+
+    def test_Kwarg(self):
+        """validation the Kwarg"""
+        self.assertNotEqual(self.placemodel, self.placedict)
 
 
 if __name__ == '__main__':

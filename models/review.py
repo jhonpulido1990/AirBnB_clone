@@ -16,3 +16,9 @@ class Review(BaseModel):
     place_id = ""
     user_id = ""
     text = ""
+
+    def __init__(self, *args, **kwargs):
+        """ Funciont:
+        This function receives two parameters *args(arguments)
+        and **kwargs(number of arguments)"""
+        super().__init__(*args, **kwargs)

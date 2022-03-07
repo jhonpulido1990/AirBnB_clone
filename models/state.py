@@ -11,3 +11,9 @@ class State(BaseModel):
     Args:
         name (Str): The name of the state. """
     name = ""
+
+    def __init__(self, *args, **kwargs):
+        """ Funciont:
+        This function receives two parameters *args(arguments)
+        and **kwargs(number of arguments)"""
+        super().__init__(*args, **kwargs)

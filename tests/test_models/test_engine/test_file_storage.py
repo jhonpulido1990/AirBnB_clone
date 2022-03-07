@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Imports modules for testing"""
-#import pep8
+|import pep8
 import os
 import unittest
 import json
@@ -23,12 +23,12 @@ class TestFileStorage(unittest.TestCase):
         '''
         self.assertEqual(self.storage.save(), None)
 
-  #  def test_pep8(self):
-  #     """Test of pep8"""
-   #     st = pep8.StyleGuide(quiet=True)
-    #    r = st.check_files(['models/engine/file_storage.py'])
-     #   self.assertEqual(r.total_errors, 0,
-      #                   "Found code style errors (and warnings).")
+    def test_pep8(self):
+        """Test of pep8"""
+        st = pep8.StyleGuide(quiet=True)
+        r = st.check_files(['models/engine/file_storage.py'])
+        self.assertEqual(r.total_errors, 0,
+                         "Found code style errors (and warnings).")
 
     def test_User_saveStorage(self):
         """ Checks if the save function works """

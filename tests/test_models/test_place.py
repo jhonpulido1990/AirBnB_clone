@@ -90,6 +90,10 @@ class TestPlace(unittest.TestCase):
         """validation the Kwarg"""
         self.assertNotEqual(self.placemodel, self.placedict)
 
+    def test_to_dict(self):
+        """ Test to_dict method inherited from BaseModel """
+        self.assertEqual('to_dict' in dir(self.placemodel), True)
+
 
 if __name__ == '__main__':
     unittest.main()

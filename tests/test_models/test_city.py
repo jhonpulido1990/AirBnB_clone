@@ -65,6 +65,10 @@ class TestCity(unittest.TestCase):
         """validation the Kwarg"""
         self.assertNotEqual(self.citymodel, self.citymodeldict)
 
+    def test_to_dict(self):
+        """ Test to_dict method inherited from BaseModel """
+        self.assertEqual('to_dict' in dir(self.citymodel), True)
+
 
 if __name__ == '__main__':
     unittest.main()

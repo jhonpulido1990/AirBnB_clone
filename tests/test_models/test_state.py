@@ -63,6 +63,10 @@ class TestState(unittest.TestCase):
         """validation the Kwarg"""
         self.assertNotEqual(self.statemodel, self.statemodeldict)
 
+    def test_to_dict(self):
+        """ Test to_dict method inherited from BaseModel """
+        self.assertEqual('to_dict' in dir(self.statemodel), True)
+
 
 if __name__ == '__main__':
     unittest.main()

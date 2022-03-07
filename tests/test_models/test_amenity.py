@@ -51,7 +51,8 @@ class TestAmenity(unittest.TestCase):
 
     def test_if_subclass(self):
         """ Tests if City is a subclass of BaseModel """
-        self.assertTrue(issubclass(self.amenitymodel.__class__, BaseModel), True)
+        self.assertTrue(issubclass(self.amenitymodel.__class__,
+                                   BaseModel), True)
 
     def test_save(self):
         """ saved to file. """
@@ -62,6 +63,10 @@ class TestAmenity(unittest.TestCase):
     def test_Kwarg(self):
         """validation the Kwarg"""
         self.assertNotEqual(self.amenitymodel, self.amenitidict)
+
+    def test_to_dict(self):
+        """ Test to_dict method inherited from BaseModel """
+        self.assertEqual('to_dict' in dir(self.amenitymodel), True)
 
 
 if __name__ == '__main__':

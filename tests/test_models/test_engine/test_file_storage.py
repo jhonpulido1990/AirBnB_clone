@@ -62,6 +62,31 @@ class TestFileStorage(unittest.TestCase):
         kk = "{}.{}".format(type(self.usuario).__name__, self.usuario.id)
         self.assertTrue(kk in s_dict.keys())
 
+    def test_save(self):
+        """Test for save method"""
+        path = os.getcwd()
+        name_expected = 'file.json'
+        try:
+            os.remove(path + "/" + name_expected)
+        except FileNotFoundError:
+            pass
+
+        mymodel = BaseModel()
+        mymodel.save()
+
+        dummy_dict = mymodel.to_dict()
+        dummy_key = f"{mymodel.__class__.__name__}.{mymodel.id}"
+
+        self.assertTrue(os.path.isfile(path + "/" + name_expected))
+        with open(name_expected, mode="r") as file:
+            output = file.read()
+        dict_json = eval(output)
+        keys = dict_json.keys()
+        self.assertIn(dummy_key, keys)
+        self.assertEqual(dummy_dict, dict_json[dummy_key])
+        os.remove(path + "/" + name_expected)
+
+
     def test_reload(self):
         """Test of reload"""
         try:

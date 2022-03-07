@@ -16,6 +16,13 @@ class TestFileStorage(unittest.TestCase):
         self.storage = FileStorage()
         self.usuario = User()
 
+    def test_pep8(self):
+        """Test of pep8"""
+        st = pep8.StyleGuide(quiet=True)
+        r = st.check_files(['models/engine/file_storage.py'])
+        self.assertEqual(r.total_errors, 0,
+                         "Found code style errors (and warnings).")
+
     def test_creation(self):
         '''
             this test validate that creation proccess was correct.

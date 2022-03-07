@@ -53,6 +53,12 @@ class TestReview(unittest.TestCase):
         self.assertIsInstance(self.Reviewmodel.__str__(), str)
         self.assertIsInstance(self.Reviewmodel.place_id, str)
 
+    def test_save(self):
+        """ saved to file. """
+        self.Reviewmodel.save()
+        with open("file.json", 'r') as f:
+            self.assertIn(self.Reviewmodel.id, f.read())
+
     def test_Kwarg(self):
         """validation the Kwarg"""
         self.assertNotEqual(self.Reviewmodel, self.Reviewmodeldict)

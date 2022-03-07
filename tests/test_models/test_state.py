@@ -32,7 +32,7 @@ class TestState(unittest.TestCase):
         """validation name"""
         self.assertEqual(self.statemodel.name, "william")
 
-    def test_city(self):
+    def test_state(self):
         """Test of comprobation"""
         self.assertEqual(self.statemodel.name, 'william')
         self.assertTrue(self.statemodel.id)

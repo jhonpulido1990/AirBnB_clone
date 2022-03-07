@@ -86,7 +86,6 @@ class TestFileStorage(unittest.TestCase):
         self.assertEqual(dummy_dict, dict_json[dummy_key])
         os.remove(path + "/" + name_expected)
 
-
     def test_reload(self):
         """Test of reload"""
         try:

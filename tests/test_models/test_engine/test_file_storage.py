@@ -59,9 +59,10 @@ class TestFileStorage(unittest.TestCase):
         self.assertTrue(kk in s_dict.keys())
 
     def test_reload(self):
+        """Test of reload"""
         try:
             os.remove("file.json")
-        except:
+        except FileJsonError:
             pass
         with open("file.json", "w") as f:
             f.write("{}")

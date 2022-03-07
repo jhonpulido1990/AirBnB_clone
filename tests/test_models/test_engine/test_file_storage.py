@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Imports modules for testing"""
 import os
-import pep8
+import pycodestyle
 import unittest
 import json
 from models.base_model import BaseModel
@@ -19,7 +19,7 @@ class TestFileStorage(unittest.TestCase):
 
     def test_style_check(self):
         """Test of pep8"""
-        st = pep8.StyleGuide(quiet=True)
+        st = pycodestyle.StyleGuide(quiet=True)
         r = st.check_files(['models/engine/file_storage.py'])
         self.assertEqual(r.total_errors, 0,
                          "Found code style errors (and warnings).")

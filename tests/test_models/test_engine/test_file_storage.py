@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Imports modules for testing"""
-|import pep8
+import pep8
 import os
 import unittest
 import json

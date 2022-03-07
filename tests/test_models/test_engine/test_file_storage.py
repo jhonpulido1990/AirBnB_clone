@@ -47,6 +47,10 @@ class TestFileStorage(unittest.TestCase):
         self.assertTrue(hasattr(self.storage, "save"))
         self.assertTrue(hasattr(self.storage, "reload"))
 
+    def test_type_id(self):
+        mymodel = BaseModel()
+        self.assertEqual(type(mymodel.id), str)
+
     def test_all(self):
         """Test method All"""
         dictiona = self.storage.all()

@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Imports modules testers"""
-import pep8
+import pycodestyle
 from datetime import datetime
 import unittest
 from models.base_model import BaseModel
@@ -15,6 +15,7 @@ class TestBaseModel(unittest.TestCase):
         cls.basemodel = BaseModel()
         cls.basemodel.first_name = 'william'
         cls.basemodel.edad = 24
+        cls.basemodel.id = "112ddw232"
         cls.basemodeldict = cls.basemodel.to_dict()
         cls.diccinary = BaseModel(**cls.basemodeldict)
 
@@ -22,6 +23,7 @@ class TestBaseModel(unittest.TestCase):
         """Test of atributes"""
         self.assertEqual(self.basemodel.first_name, "william")
         self.assertEqual(self.basemodel.edad, 24)
+        self.assertEqual(self.basemodel.id, "112ddw232")
 
     def test_BaseModel(self):
         """Test of comprobation"""
@@ -35,7 +37,7 @@ class TestBaseModel(unittest.TestCase):
 
     def test_pep8(self):
         """Test of style"""
-        st = pep8.StyleGuide(quiet=True)
+        st = pycodestyle.StyleGuide(quiet=True)
         stx = st.check_files(['models/city.py'])
         self.assertEqual(stx.total_errors, 0, "check pep8")
 
@@ -54,6 +56,10 @@ class TestBaseModel(unittest.TestCase):
         self.assertIsInstance(self.basemodel.created_at, datetime)
         self.assertIsInstance(self.basemodel.__str__(), str)
         self.assertIsInstance(self.basemodel.edad, int)
+
+    def test_id(self):
+        self.assertTrue(self.basemodel.id)
+        self.assertTrue(type(self.basemodel.id), str)
 
     def test_save(self):
         """ saved to file. """

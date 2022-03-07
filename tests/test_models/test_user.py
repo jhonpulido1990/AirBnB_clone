@@ -2,7 +2,7 @@
 """Imports modules tester"""
 import unittest
 from models.user import User
-import pep8
+import pycodestyle
 from models.engine.file_storage import FileStorage
 
 
@@ -25,9 +25,9 @@ class TestUser(unittest.TestCase):
         """Test of comprobation"""
         self.assertEqual(self.user.first_name, 'William')
 
-    def test_pep8(self):
+    def test_pycodestyle(self):
         """Test of style"""
-        st = pep8.StyleGuide(quiet=True)
+        st = pycodestyle.StyleGuide(quiet=True)
         stx = st.check_files(['models/user.py'])
         self.assertEqual(stx.total_errors, 0, "check pep8")
 

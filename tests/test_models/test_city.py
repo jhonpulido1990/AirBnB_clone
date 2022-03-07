@@ -2,7 +2,7 @@
 """Imports modules testers"""
 from datetime import datetime
 import unittest
-import pep8
+import pycodestyle
 from models.city import City
 
 
@@ -18,9 +18,9 @@ class TestCity(unittest.TestCase):
         cls.citymodeldict = cls.citymodel.to_dict()
         cls.diccinary = City(**cls.citymodeldict)
 
-    def test_pep8(self):
+    def test_style_check(self):
         """Test of style"""
-        st = pep8.StyleGuide(quiet=True)
+        st = pycodestyle.StyleGuide(quiet=True)
         stx = st.check_files(['models/city.py'])
         self.assertEqual(stx.total_errors, 0, "check pep8")
 

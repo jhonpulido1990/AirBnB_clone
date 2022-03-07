@@ -35,7 +35,7 @@ class TestBaseModel(unittest.TestCase):
         self.assertEqual(self.basemodel.first_name,
                          self.diccinary.first_name)
 
-    def test_pep8(self):
+    def test_style_check(self):
         """Test of style"""
         st = pycodestyle.StyleGuide(quiet=True)
         stx = st.check_files(['models/city.py'])

@@ -2,7 +2,7 @@
 """Imports modules testers"""
 from datetime import datetime
 import unittest
-import pep8
+import pycodestyle
 from models.amenity import Amenity
 
 
@@ -17,9 +17,9 @@ class TestAmenity(unittest.TestCase):
         cls.amenitidict = cls.amenitymodel.to_dict()
         cls.diccinary = Amenity(**cls.amenitidict)
 
-    def test_pep8(self):
+    def test_style_check(self):
         """Test of style"""
-        st_ameni = pep8.StyleGuide(quiet=True)
+        st_ameni = pycodestyle.StyleGuide(quiet=True)
         stx_ameni = st_ameni.check_files(['models/amenity.py'])
         self.assertEqual(stx_ameni.total_errors, 0, "check pep8")
 

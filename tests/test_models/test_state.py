@@ -2,7 +2,7 @@
 """Imports modules testers"""
 import unittest
 from datetime import datetime
-import pep8
+import pycodestyle
 from models.state import State
 
 
@@ -17,9 +17,9 @@ class TestState(unittest.TestCase):
         cls.statemodeldict = cls.statemodel.to_dict()
         cls.diccinary = State(**cls.statemodeldict)
 
-    def test_pep8(self):
+    def test_style_check(self):
         """Test of style"""
-        st = pep8.StyleGuide(quiet=True)
+        st = pycodestyle.StyleGuide(quiet=True)
         stx = st.check_files(['models/base_model.py'])
         self.assertEqual(stx.total_errors, 0, "check pep8")
 

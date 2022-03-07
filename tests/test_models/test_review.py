@@ -2,7 +2,7 @@
 """Imports modules testers"""
 import unittest
 from datetime import datetime
-import pep8
+import pycodestyle
 from models.review import Review
 
 
@@ -19,9 +19,9 @@ class TestReview(unittest.TestCase):
         cls.Reviewmodeldict = cls.Reviewmodel.to_dict()
         cls.diccinary = Review(**cls.Reviewmodeldict)
 
-    def test_pep8(self):
+    def test_style_check(self):
         """Test of style"""
-        st = pep8.StyleGuide(quiet=True)
+        st = pycodestyle.StyleGuide(quiet=True)
         stx = st.check_files(['models/review.py'])
         self.assertEqual(stx.total_errors, 0, "check pep8")
 

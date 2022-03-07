@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Imports modules for testing"""
 import os
+import pep8
 import unittest
 import json
 from models.base_model import BaseModel
@@ -16,7 +17,7 @@ class TestFileStorage(unittest.TestCase):
         self.storage = FileStorage()
         self.usuario = User()
 
-    def test_pep8(self):
+    def test_style_check(self):
         """Test of pep8"""
         st = pep8.StyleGuide(quiet=True)
         r = st.check_files(['models/engine/file_storage.py'])

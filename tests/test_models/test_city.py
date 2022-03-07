@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Imports modules testers"""
 from datetime import datetime
+from models.base_model import BaseModel
 import unittest
 import pycodestyle
 from models.city import City
@@ -32,6 +33,10 @@ class TestCity(unittest.TestCase):
         """validation name"""
         self.assertEqual(self.citymodel.name, "william")
         self.assertEqual(self.citymodel.state_id, "fb15sv1v11fb11vv11v")
+
+    def test_if_subclass(self):
+        """ Tests if City is a subclass of BaseModel """
+        self.assertTrue(issubclass(self.citymodel.__class__, BaseModel), True)
 
     def test_city(self):
         """Test of comprobation"""

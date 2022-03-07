@@ -4,6 +4,7 @@ import unittest
 from datetime import datetime
 import pycodestyle
 from models.review import Review
+from models.base_model import BaseModel
 
 
 class TestReview(unittest.TestCase):
@@ -52,6 +53,10 @@ class TestReview(unittest.TestCase):
         self.assertIsInstance(self.Reviewmodel.created_at, datetime)
         self.assertIsInstance(self.Reviewmodel.__str__(), str)
         self.assertIsInstance(self.Reviewmodel.place_id, str)
+
+    def test_if_subclass(self):
+        """ Tests if City is a subclass of BaseModel """
+        self.assertTrue(issubclass(self.Reviewmodel.__class__, BaseModel), True)
 
     def test_save(self):
         """ saved to file. """

@@ -4,6 +4,7 @@ from datetime import datetime
 import unittest
 import pycodestyle
 from models.place import Place
+from models.base_model import BaseModel
 
 
 class TestPlace(unittest.TestCase):
@@ -65,6 +66,10 @@ class TestPlace(unittest.TestCase):
         self.assertNotEqual(self.placemodel.amenity_ids, [])
         self.assertNotEqual(self.placemodel.price_by_night, 4)
         self.assertNotEqual(self.placemodel.number_rooms, 2)
+
+    def test_if_subclass(self):
+        """ Tests if City is a subclass of BaseModel """
+        self.assertTrue(issubclass(self.placemodel.__class__, BaseModel), True)
 
     def test_place(self):
         """Test of comprobation"""

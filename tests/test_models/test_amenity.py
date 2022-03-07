@@ -4,6 +4,7 @@ from datetime import datetime
 import unittest
 import pycodestyle
 from models.amenity import Amenity
+from models.base_model import BaseModel
 
 
 class TestAmenity(unittest.TestCase):
@@ -47,6 +48,10 @@ class TestAmenity(unittest.TestCase):
         self.assertIsInstance(self.amenitymodel.created_at, datetime)
         self.assertIsInstance(self.amenitymodel.__str__(), str)
         self.assertIsInstance(self.amenitymodel.name, str)
+
+    def test_if_subclass(self):
+        """ Tests if City is a subclass of BaseModel """
+        self.assertTrue(issubclass(self.amenitymodel.__class__, BaseModel), True)
 
     def test_save(self):
         """ saved to file. """

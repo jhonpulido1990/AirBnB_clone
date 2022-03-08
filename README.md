@@ -414,7 +414,7 @@ No unittests needed
 * File:  ` console.py ` 
  Self-paced manual review  Panel footer - Controls 
 ### 8. First User
-          mandatory         Progress vs Score  Task Body Write a class   ` User `   that inherits from   ` BaseModel `  :
+          
 *  ` models/user.py ` 
 * Public class attributes:*  ` email ` : string - empty string
 *  ` password ` : string - empty string

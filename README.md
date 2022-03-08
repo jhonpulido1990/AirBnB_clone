@@ -1,6 +1,6 @@
 # 0x00. AirBnB clone - The console
 ## Details
-      By Guillaume          Weight: 5          Project to be done in teams of 2 people        (your team: William Cardozo, Jhon Jairo Pulido Lasso                Ongoing project - started 02-28-2022, must end by 03-07-2022 (in 3 days)          - you're done with 0% of tasks.              Checker will be released at 03-05-2022 06:00 AM      Manual QA review must be done          (request it when you are done with the project)              An auto review will be launched at the deadline      ## Concepts
+     
 For this project, students are expected to look at these concepts:
 * [Python packages](https://intranet.hbtn.io/concepts/66) 
 
@@ -92,62 +92,7 @@ All tests should also pass in non-interactive mode:   ` $ echo "python3 -m unitt
  ![](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2018/6/815046647d23428a14ca.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOU5BHMTQX4%2F20220304%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220304T155845Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=483967000eda183c001bd7626db0d773060d4ea3d69a252b3330c678e8b250b2) 
 
 
-## Tasks
-### 0. README, AUTHORS
-          mandatory         Progress vs Score  Task Body * Write a  ` README.md ` :* description of the project
-* description of the command interpreter:* how to start it
-* how to use it
-* examples
-
-
-* You should have an  ` AUTHORS `  file at the root of your repository, listing all individuals having contributed content to the repository. For format, reference [Docker’s AUTHORS page](https://intranet.hbtn.io/rltoken/LhxU3SNypZwn428dmpz_qw) 
-
-* You should use branches and pull requests on GitHub - it will help you as team to organize your work
- Task URLs  Github information Repo:
-* GitHub repository:  ` AirBnB_clone ` 
-* File:  ` README.md, AUTHORS ` 
- Self-paced manual review  Panel footer - Controls 
-### 1. Be Pycodestyle compliant!
-          mandatory         Progress vs Score  Task Body Write beautiful code that passes the pycodestyle checks.
- Task URLs  Github information Repo:
-* GitHub repository:  ` AirBnB_clone ` 
- Self-paced manual review  Panel footer - Controls 
-### 2. Unittests
-          mandatory         Progress vs Score  Task Body All your files, classes, functions must be tested with unit tests
-```bash
-guillaume@ubuntu:~/AirBnB$ python3 -m unittest discover tests
-...................................................................................
-...................................................................................
-.......................
-----------------------------------------------------------------------
-Ran 189 tests in 13.135s
-
-OK
-guillaume@ubuntu:~/AirBnB$
-
-```
-Note that this is just an example, the number of tests you create can be different from the above example .
-Warning:
-Unit tests must also pass in non-interactive mode:
-```bash
-guillaume@ubuntu:~/AirBnB$ echo "python3 -m unittest discover tests" | bash
-...................................................................................
-...................................................................................
-.......................
-----------------------------------------------------------------------
-Ran 189 tests in 13.135s
-
-OK
-guillaume@ubuntu:~/AirBnB$
-
-```
- Task URLs  Github information Repo:
-* GitHub repository:  ` AirBnB_clone ` 
-* File:  ` tests/ ` 
- Self-paced manual review  Panel footer - Controls 
-### 3. BaseModel
-          mandatory         Progress vs Score  Task Body Write a class   ` BaseModel `   that defines all common attributes/methods for other classes:
-*  ` models/base_model.py ` 
+### 3. BaseModel 
 * Public instance attributes: *  ` id ` : string - assign with an  ` uuid `  when an instance is created:* you can use  ` uuid.uuid4() `  to generate unique  ` id `  but don’t forget to convert to a string
 * the goal is to have unique  ` id `  for each  ` BaseModel ` 
 
@@ -201,8 +146,8 @@ guillaume@ubuntu:~/AirBnB$
 * File:  ` models/base_model.py, models/__init__.py, tests/ ` 
  Self-paced manual review  Panel footer - Controls 
 ### 4. Create BaseModel from dictionary
-          mandatory         Progress vs Score  Task Body Previously we created a method to generate a dictionary representation of an instance (method   ` to_dict() `  ).
-Now it’s time to re-create an instance with this dictionary representation.
+          
+          Now it’s time to re-create an instance with this dictionary representation.
  ` <class 'BaseModel'> -> to_dict() -> <class 'dict'> -> <class 'BaseModel'>
  ` Update   ` models/base_model.py `  :
 *  ` __init__(self, *args, **kwargs) ` : * you will use  ` *args, **kwargs `  arguments for the constructor of a  ` BaseModel ` . (more information inside the AirBnB clone concept page)
@@ -268,8 +213,7 @@ guillaume@ubuntu:~/AirBnB$
 * File:  ` models/base_model.py, tests/ ` 
  Self-paced manual review  Panel footer - Controls 
 ### 5. Store first object
-          mandatory         Progress vs Score  Task Body Now we can recreate a   ` BaseModel `   from another one by using a dictionary representation:
- ` <class 'BaseModel'> -> to_dict() -> <class 'dict'> -> <class 'BaseModel'>
+          
  ` It’s great but it’s still not persistent: every time you launch the program, you don’t restore all objects created before… The first way you will see here is to save these objects to a file.
 Writing the dictionary representation to a file won’t be relevant:
 * Python doesn’t know how to convert a string to a dictionary (easily)

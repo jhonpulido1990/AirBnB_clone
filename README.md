@@ -553,3 +553,7 @@ These are:
 ` syntax `: destroy "class name" "ID"
 ### Update:
 ` syntax `: update "class name" "ID" "attribute name" "attribute value"
+
+# AUTHORS
+[Jhon Jairo Pulido](https://github.com/jhonpulido1990)
+[William Cardozo](https://github.com/William05Cardozo)

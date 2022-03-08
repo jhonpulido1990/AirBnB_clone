@@ -540,22 +540,16 @@ No unittests needed for the console
  Self-paced manual review  Panel footer - Controls 
 [Done with the mandatory tasks? Unlock 7 advanced tasks now!](https://intranet.hbtn.io/projects/263/unlock_optionals) 
 
-Ready for a  manual review×#### Recommended Sandbox
-[Running only]() 
-### 1 image(1/5 Sandboxes spawned)
-### Ubuntu 20.04
-Basic Ubuntu 20.04, with vim, emacs, curl, wget and all needed for Holberton Foundations
-SSHSFTP[Webterm](https://intranet.hbtn.io/user_containers/17836/webterm) 
-[Destroy]() 
-#### Credentials
-Host4aa76ec2605d.ba0aa7bd.hbtn-cod.ioUsername4aa76ec2605dPassword95896abd009a136e84ba#### Web access
-[HTTPS](https://4aa76ec2605d.ba0aa7bd.hbtn-cod.io/) 
-[HTTP](http://4aa76ec2605d.ba0aa7bd.hbtn-cod.io/) 
-[3000](http://4aa76ec2605d.ba0aa7bd.hbtn-cod.io:3000/) 
-[4000](http://4aa76ec2605d.ba0aa7bd.hbtn-cod.io:4000/) 
-[5000](http://4aa76ec2605d.ba0aa7bd.hbtn-cod.io:5000/) 
-[5001](http://4aa76ec2605d.ba0aa7bd.hbtn-cod.io:5001/) 
-[8000](http://4aa76ec2605d.ba0aa7bd.hbtn-cod.io:8000/) 
-[8080](http://4aa76ec2605d.ba0aa7bd.hbtn-cod.io:8080/) 
-#### Port mapping
-SSH49328HTTP49327HTTPS49326300049325MySQL49324400049323500049322500149321800049320808049319
+# how to use it:
+ To use our console we must make use of some previously added commands. 
+These are: 
+### All:
+` syntax `: all "class name".
+### Create:
+` syntax `: create "class name".
+### Show:
+` syntax `: show "class name" "ID"
+### Destroy:
+` syntax `: destroy "class name" "ID"
+### Update:
+` syntax `: update "class name" "ID" "attribute name" "attribute value"

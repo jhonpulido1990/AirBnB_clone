@@ -147,7 +147,7 @@ guillaume@ubuntu:~/AirBnB$
  Self-paced manual review  Panel footer - Controls 
 ### 4. Create BaseModel from dictionary
           
-          Now it’s time to re-create an instance with this dictionary representation.
+          
  ` <class 'BaseModel'> -> to_dict() -> <class 'dict'> -> <class 'BaseModel'>
  ` Update   ` models/base_model.py `  :
 *  ` __init__(self, *args, **kwargs) ` : * you will use  ` *args, **kwargs `  arguments for the constructor of a  ` BaseModel ` . (more information inside the AirBnB clone concept page)
@@ -343,7 +343,7 @@ No unittests needed
 * File:  ` console.py ` 
  Self-paced manual review  Panel footer - Controls 
 ### 7. Console 0.1
-          mandatory         Progress vs Score  Task Body Update your command interpreter (  ` console.py `  ) to have these commands:
+         
 *  ` create ` : Creates a new instance of  ` BaseModel ` , saves it (to the JSON file) and prints the  ` id ` . Ex:  ` $ create BaseModel ` * If the class name is missing, print  ` ** class name missing ** `  (ex:  ` $ create ` )
 * If the class name doesn’t exist, print  ` ** class doesn't exist ** `  (ex:  ` $ create MyModel ` )
 
@@ -496,7 +496,7 @@ No unittests needed for the console
 * File:  ` models/user.py, models/engine/file_storage.py, console.py, tests/ ` 
  Self-paced manual review  Panel footer - Controls 
 ### 9. More classes!
-          mandatory         Progress vs Score  Task Body Write all those classes that inherit from   ` BaseModel `  :
+          
 *  ` State `  ( ` models/state.py ` ):* Public class attributes:*  ` name ` : string - empty string
 
 
@@ -530,7 +530,7 @@ No unittests needed for the console
 * File:  ` models/state.py, models/city.py, models/amenity.py, models/place.py, models/review.py, tests/ ` 
  Self-paced manual review  Panel footer - Controls 
 ### 10. Console 1.0
-          mandatory         Progress vs Score  Task Body Update   ` FileStorage `   to manage correctly serialization and deserialization of all our new classes:   ` Place `  ,   ` State `  ,   ` City `  ,   ` Amenity `   and   ` Review ` 
+          
 Update your command interpreter (  ` console.py `  ) to allow those actions:   ` show `  ,   ` create `  ,   ` destroy `  ,   ` update `   and   ` all `   with all classes created previously.
 Enjoy your first console!
 No unittests needed for the console

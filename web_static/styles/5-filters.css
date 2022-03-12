@@ -28,17 +28,21 @@
     height:100%;
     width: 25%;
     border-right: 1px solid #DDDDDD;
-    text-align: center;
 }
 .container .filters .amenities{
     height:100%;
     width: 25%;
-    text-align: center;
 }
 h4{
+    display:block;
     font-weight: 400%;
     font-size: 14px;
+    height: 0%;
+    margin-left: 20%;
 }
-h6{
+h3{
+    display: block;
     font-weight: 600%;
+    height: 0%;
+    margin-left: 20%;
 }

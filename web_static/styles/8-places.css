@@ -41,7 +41,7 @@ article h2{
     justify-content: center;
     align-items: center;
     position: relative;
-    bottom: 15%;
+    bottom: 10%;
     left: 80%;
     min-width: 60px;
     height: 80px;
@@ -82,4 +82,8 @@ article h2{
     background-position: 50%;
     background-position-y: 30%;
     width: 100px;
+}
+.user{
+    margin: 10px 0 10px 0;
+    padding: 0;
 }
